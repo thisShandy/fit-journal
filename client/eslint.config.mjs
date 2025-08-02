@@ -14,33 +14,39 @@ const require = createRequire(import.meta.url);
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+
   {
     plugins: {
+      import: require("eslint-plugin-import"),
       "simple-import-sort": require("eslint-plugin-simple-import-sort"),
     },
     rules: {
-      "simple-import-sort/imports": [
+      "import/order": [
         "warn",
         {
           groups: [
-            ["^type:\\s*@?\\w", "^type:\\s@/"],
-
-            ["^react$", "^next", "^@?\\w"],
-
-            [".*hook.*"],
-
-            [".*(lib|utils).*"],
-
-            [".*components.*"],
-
-            ["^.+\\.s?css$"],
-            ["^\\."]
+            ["type"],
+            ["builtin", "external"],
+            ["internal"],
+            ["sibling", "parent", "index"],
+            ["object"]
           ],
-        },
+          pathGroups: [
+            {
+              pattern: "~/**",
+              group: "internal"
+            }
+          ],
+          pathGroupsExcludedImportTypes: ["type"],
+          alphabetize: {
+            order: "asc",
+            caseInsensitive: true
+          },
+          "newlines-between": "always"
+        }
       ],
-      "simple-import-sort/exports": "warn",
-    },
-  },
+    }
+  }
 ];
 
 export default eslintConfig;
