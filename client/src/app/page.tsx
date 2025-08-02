@@ -3,9 +3,7 @@ import { getTranslations } from "next-intl/server";
 const Home = async () => {
   const t = await getTranslations("home");
 
-  const test = require("next-ints");
   const test2 = require("next-ints");
-
   return (
     <div>
       <span>{t("message.hello")}</span>

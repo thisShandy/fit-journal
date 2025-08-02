@@ -10,11 +10,11 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check-staged": "lint-staged",
-    "prepare": "husky"
+    "prepare": "cd .. && husky client/.husky"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
-      "eslint . --fix",
+      "eslint --fix",
       "prettier --write"
     ],
     "**/*.{json,md}": [
@@ -33,11 +33,13 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/sass": "^1.45.0",
-    "eslint": "^9",
+    "eslint": "^9.32.0",
     "eslint-config-next": "15.4.5",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
     "sass": "^1.89.2",
     "typescript": "^5"
   }
