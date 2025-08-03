@@ -6,6 +6,7 @@ const Home = async () => {
   return (
     <div>
       <span>{t("message.hello")}</span>
+      <span>Hello</span>
     </div>
   );
 };
