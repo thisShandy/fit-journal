@@ -21,7 +21,17 @@ const eslintConfig = [
       "simple-import-sort": require("eslint-plugin-simple-import-sort"),
     },
     rules: {
-      "import/order": [
+      quotes: ["error", "double"],
+      semi: ["error", "always"],
+      "no-case-declarations": "off",
+      indent: ["error", 2, { SwitchCase: 1 }],
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        {
+          "prefer": "type-imports"
+        }
+      ],
+      "simple-import-sort/imports": [
         "warn",
         {
           groups: [
