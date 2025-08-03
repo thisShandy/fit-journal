@@ -1,8 +1,7 @@
 import { getLocale } from "next-intl/server";
 import type { Metadata } from "next";
-
-import "~/common/ui/style/globals.scss";
 import { Geist, Geist_Mono } from "next/font/google";
+import "~/common/ui/style/globals.scss";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

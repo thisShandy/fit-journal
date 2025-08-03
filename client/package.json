@@ -23,12 +23,6 @@
     ]
   },
 
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-
   "dependencies": {
     "next": "15.4.5",
     "next-intl": "^4.3.4",
