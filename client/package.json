@@ -10,7 +10,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check-staged": "lint-staged",
-    "prepare": "cd .. && husky client/.husky"
+    "prepare": "cd .. && .husky client/.husky"
   },
 
   "lint-staged": {
