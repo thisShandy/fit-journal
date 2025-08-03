@@ -10,9 +10,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check-staged": "lint-staged",
-    "prepare": "cd .. && .husky client/.husky"
+    "prepare": "husky"
   },
-
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "eslint --fix",
@@ -22,7 +21,6 @@
       "prettier --write"
     ]
   },
-
   "dependencies": {
     "next": "15.4.5",
     "next-intl": "^4.3.4",
