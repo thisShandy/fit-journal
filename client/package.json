@@ -12,6 +12,7 @@
     "check-staged": "lint-staged",
     "prepare": "cd .. && husky client/.husky"
   },
+
   "lint-staged": {
     "**/*.{ts,tsx}": [
       "eslint --fix",
@@ -21,6 +22,13 @@
       "prettier --write"
     ]
   },
+
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+
   "dependencies": {
     "next": "15.4.5",
     "next-intl": "^4.3.4",
