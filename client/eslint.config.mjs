@@ -31,20 +31,51 @@ const eslintConfig = [
           "prefer": "type-imports"
         }
       ],
-      "simple-import-sort/imports": [
+      "import/order": [
         "warn",
         {
           groups: [
             ["type"],
             ["builtin", "external"],
             ["internal"],
-            ["sibling", "parent", "index"],
-            ["object"]
+            ["object"],
+            ["sibling"]
           ],
           pathGroups: [
             {
+              pattern: ".*recoil.*",
+              group: "internal",
+              position: "after"
+            },
+            {
+              pattern: ".*hook.*",
+              group: "internal",
+              position: "after"
+            },
+            {
+              pattern: ".*(helper|util).*",
+              group: "internal",
+              position: "after"
+            },
+            {
+              pattern: ".*(type|config).*",
+              group: "internal",
+              position: "after"
+            },
+            {
               pattern: "~/**",
-              group: "internal"
+              group: "internal",
+              position: "after"
+            },
+            {
+              pattern: "\".*(component|section|modal|kit|form|layout|view).*\"",
+              group: "object",
+              position: "after"
+            },
+            {
+              pattern: "*.s?(a|c)ss",
+              group: "sibling",
+              position: "after"
             }
           ],
           pathGroupsExcludedImportTypes: ["type"],
