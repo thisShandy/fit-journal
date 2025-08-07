@@ -1,0 +1,15 @@
+@use "src/common/ui/style/main" as *;
+
+.footer {
+  @include flexRow(center, center);
+
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+
+  &__title {
+    font-size: 1rem;
+    color: var(--dark-color);
+
+    opacity: .35;
+  }
+}

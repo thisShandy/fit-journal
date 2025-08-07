@@ -1,1 +1,23 @@
+@use "main" as *;
 
+:root {
+  --main-color: #3C5468;
+
+  --white-color: #F2F5F8;
+  --dark-color: #0F151A;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+
+  color: var(--dark-color);
+  text-decoration: none;
+
+  box-sizing: border-box;
+}
