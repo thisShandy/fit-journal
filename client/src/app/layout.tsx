@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import type { PropsWithChildren } from "react";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import { getLocale } from "next-intl/server";
 
-import "~/common/ui/style/globals.scss";
+import "~/common/ui/style/global.scss";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,9 +23,7 @@ export const metadata: Metadata = {
 
 const RootLayout = async ({
   children
-}: Readonly<{
-  children: React.ReactNode;
-}>) => {
+}: Readonly<PropsWithChildren>) => {
   const locale = await getLocale();
 
   return (
