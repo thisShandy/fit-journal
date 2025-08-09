@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
         hostname: "cdn.7days.ru",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "img.freepik.com",
+        pathname: "**",
+      },
     ],
   }
 };
