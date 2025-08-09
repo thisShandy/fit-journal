@@ -1,6 +1,8 @@
+import Image from "next/image";
+
 import Tag from "~/common/ui/component/article/tag";
 import ContainerLayout from "~/common/ui/layout/container-layout";
-import Image from "next/image";
+
 import style from "./style/style.module.scss";
 
 const HeadSection = () => {
@@ -32,7 +34,6 @@ const HeadSection = () => {
         </div>
 
         <div className={style.headSection__border}></div>
-
       </ContainerLayout>
     </section>
   );
