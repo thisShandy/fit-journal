@@ -1,28 +1,65 @@
 @use "src/common/ui/style/main" as *;
 
 .header {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 72px;
+  min-height: 72px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+  background-color: var(--white-color);
+
+  @include md {
+    height: 48px;
+    min-height: 48px;
+  }
+}
+
+.headerContainer {
   @include flexRow(center, space-between);
 
   width: 100%;
   max-width: 1080px;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  height: 100%;
   margin-inline: auto;
+}
 
-  .header__logo {
-    padding: .75rem 1.5rem;
+.headerLogo {
+  @include flexRow(center, center);
 
-    background-color: #3C5468;
+  padding: .75rem 1.5rem;
 
+  background-color: var(--main-color);
+
+  @include md {
+    padding: .5rem 1rem;
+  }
+
+  &__title {
     font-family: var(--font-playfair), serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: white;
+    color: var(--white-color);
+    letter-spacing: .05rem;
+
+    @include md {
+      font-size: 1rem;
+    }
+  }
+}
+
+.headerTopics {
+  @include flexRow(center, center, 1);
+
+  list-style: none;
+
+  @include md {
+    display: none;
   }
 
-  .header__topics {
-    @include flexRow(center, center, 1);
+  &__item {
 
-    list-style: none;
   }
 }

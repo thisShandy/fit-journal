@@ -22,3 +22,13 @@
 
   box-sizing: border-box;
 }
+
+html {
+  scroll-padding-top: 72px;
+}
+
+body {
+  position: relative;
+
+  background-color: var(--white-color);
+}
