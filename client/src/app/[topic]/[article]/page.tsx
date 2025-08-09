@@ -1,4 +1,5 @@
 import ArticleLayout from "~/common/ui/layout/article-layout";
+import HeadSection from "~/common/ui/section/article/head-section";
 import ImageSection from "~/common/ui/section/article/image-section";
 import QuoteSection from "~/common/ui/section/article/quote-section";
 import ReviewsSection from "~/common/ui/section/article/reviews-section";
@@ -14,6 +15,7 @@ const imageMock = {
 const Article = () => {
   return (
     <ArticleLayout>
+      <HeadSection />
       <TextSection text={textMock} />
       <QuoteSection text={quoteMock} />
       <ImageSection {...imageMock} />
