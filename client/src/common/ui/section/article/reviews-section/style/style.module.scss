@@ -1,0 +1,26 @@
+@use "src/common/ui/style/main" as *;
+
+.reviewsSection {
+  @include flexColumn(flex-start, flex-start, 2);
+
+  @include md {
+    gap: 1.25rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+
+    @include md {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__list {
+    @include flexColumn(flex-start, flex-start, 2);
+
+    @include md {
+      gap: 1rem;
+    }
+  }
+}

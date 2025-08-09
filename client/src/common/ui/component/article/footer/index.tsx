@@ -4,11 +4,11 @@ import ContainerLayout from "~/common/ui/layout/container-layout";
 
 import style from "./style/style.module.scss";
 
-interface IArticleFooterProps {
+interface IFooterProps {
   text?: string;
 }
 
-const ArticleFooter: FC<IArticleFooterProps> = ({ text }) => {
+const Footer: FC<IFooterProps> = ({ text }) => {
   return (
     <ContainerLayout className={style.footer}>
       <span className={style.footer__title}>{text || "Продукт не является медицинским изделием"}</span>
@@ -16,4 +16,4 @@ const ArticleFooter: FC<IArticleFooterProps> = ({ text }) => {
   );
 };
 
-export default ArticleFooter;
+export default Footer;

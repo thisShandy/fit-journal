@@ -16,8 +16,19 @@
 
   background-color: transparent;
 
+  font-family: var(--font-inter), sans-serif;
   color: var(--dark-color);
   text-decoration: none;
 
   box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 72px;
+}
+
+body {
+  position: relative;
+
+  background-color: var(--white-color);
 }

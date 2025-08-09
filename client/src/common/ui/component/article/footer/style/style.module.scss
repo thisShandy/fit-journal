@@ -1,0 +1,21 @@
+@use "src/common/ui/style/main" as *;
+
+.footer {
+  @include flexRow(center, center);
+
+  width: 100%;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+
+  .footer__title {
+    font-family: var(-font-inter), serif;
+    font-size: 1rem;
+    text-align: center;
+
+    opacity: .35;
+
+    @include md {
+      font-size: .875rem;
+    }
+  }
+}
