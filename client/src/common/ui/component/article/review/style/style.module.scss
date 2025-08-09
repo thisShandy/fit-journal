@@ -11,6 +11,10 @@
 
   &__image {
     object-fit: cover;
+
+    @include md {
+      width: 100%;
+    }
   }
 }
 
@@ -21,6 +25,10 @@
 
   &__initials {
     @include flexRow(center, center, 1);
+
+    @include md {
+      gap: .5rem;
+    }
   }
 
   &__avatar {
@@ -28,11 +36,20 @@
     height: 48px;
 
     border-radius: 99rem;
+
+    @include md {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   &__name {
     font-weight: 600;
     font-size: 1.25rem;
+
+    @include md {
+      font-size: 1.15rem;
+    }
   }
 
   &__time {
