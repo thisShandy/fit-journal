@@ -1,9 +1,15 @@
 @use "src/common/ui/style/main" as *;
 
+.quoteSection {
+  &__wrapper {
+    @include flexRow();
 
-.quote__description {
-  display: flex;
-  padding-left: 1rem;
-  border-left: 2px solid #000;
-  font-style: italic;
+    padding-left: 1rem;
+
+    border-left: 2px solid var(--dark-color);
+  }
+
+  &__text {
+    font-style: italic;
+  }
 }

@@ -8,21 +8,13 @@ interface IQuoteSectionProps {
   text: string;
 }
 
-const quoteMock: IQuoteSectionProps[] = [
-  {
-    text: "Still, this simple change in mindset helped me get way more out of ChatGPT by changing the mental model I hold for it. Try these ideas out and let the results speak for themselves."
-  }
-];
-
-const QuoteSection: FC<IQuoteSectionProps> = () => {
+const QuoteSection: FC<IQuoteSectionProps> = ({ text }) => {
   return (
     <section>
-      <ContainerLayout>
-        {quoteMock.map((item, index) => (
-          <span key={index} className={style.quote__description}>
-            {item.text}
-          </span>
-        ))}
+      <ContainerLayout className={style.quoteSection}>
+        <div className={style.quoteSection__wrapper}>
+          <span className={style.quoteSection__text}>{text}</span>
+        </div>
       </ContainerLayout>
     </section>
   );

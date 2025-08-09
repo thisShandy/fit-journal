@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_article_head_sections",
+  "info": {
+    "displayName": "head-section",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

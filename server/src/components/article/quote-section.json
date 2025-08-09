@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_article_quote_sections",
+  "info": {
+    "displayName": "quote-section",
+    "icon": "italic"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    }
+  },
+  "config": {}
+}
