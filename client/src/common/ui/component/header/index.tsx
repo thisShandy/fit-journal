@@ -20,7 +20,7 @@ const Header = () => {
             <Link href="/sugar">Сахар</Link>
           </li>
           <li className={style.headerTopics__item}>
-            <Link href="/young">Омоложение</Link>
+            <Link href="/young">Тесты</Link>
           </li>
         </ul>
       </div>
