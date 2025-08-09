@@ -1,20 +1,11 @@
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
-import { Geist, Geist_Mono } from "next/font/google";
 import { getLocale } from "next-intl/server";
 
+import { fontConfig } from "~/common/lib/config/font.config";
+
 import "~/common/ui/style/global.scss";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"]
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"]
-});
 
 export const metadata: Metadata = {
   title: "Fit Journal",
@@ -27,7 +18,7 @@ const RootLayout = async ({
   const locale = await getLocale();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={fontConfig}>
       <body>{children}</body>
     </html>
   );
