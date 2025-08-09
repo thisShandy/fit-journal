@@ -1,0 +1,19 @@
+@use "src/common/ui/style/main" as *;
+
+.tag {
+  @include flexRow(center, center, .25);
+
+  padding: .375rem .75rem;
+
+  border-radius: .25rem;
+  border: 1px solid var(--border-color);
+
+  &__title {
+    font-size: .875rem;
+    color: var(--dark-medium-color);
+
+    @include md {
+      font-size: .75rem;
+    }
+  }
+}
