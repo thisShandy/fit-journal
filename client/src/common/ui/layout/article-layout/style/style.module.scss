@@ -1,16 +1,7 @@
 @use "src/common/ui/style/main" as *;
 
-.footer {
-  @include flexRow(center, center);
+.articleLayout {
+  @include flexColumn(center, flex-start, 1.5);
 
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-
-  &__title {
-    font-size: 1rem;
-    color: var(--dark-color);
-    font-family: var(--font-playfair);
-
-    opacity: .35;
-  }
+  width: 100%;
 }

@@ -1,0 +1,14 @@
+@use "src/common/ui/style/main" as *;
+
+.reviewsSection {
+  @include flexColumn(flex-start, flex-start, 2);
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  &__list {
+    @include flexColumn(flex-start, flex-start, 2);
+  }
+}
