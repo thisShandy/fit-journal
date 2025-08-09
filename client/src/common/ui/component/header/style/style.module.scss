@@ -1,0 +1,28 @@
+@use "src/common/ui/style/main" as *;
+
+.header {
+  @include flexRow(center, space-between);
+
+  width: 100%;
+  max-width: 1080px;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  margin-inline: auto;
+
+  .header__logo {
+    padding: .75rem 1.5rem;
+
+    background-color: #3C5468;
+
+    font-family: var(--font-playfair), serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .header__topics {
+    @include flexRow(center, center, 1);
+
+    list-style: none;
+  }
+}

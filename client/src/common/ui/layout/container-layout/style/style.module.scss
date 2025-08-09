@@ -2,34 +2,7 @@
 
 .container {
   width: 100%;
-  max-width: 1080px;
+  max-width: 780px;
   padding-inline: 1rem;
   margin-inline: auto;
-
-  .header {
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-
-    .header__logo {
-      padding: 12px 24px;
-
-      font-size: 1.5rem;
-      font-weight: 700;
-      font-family: var(--font-playfair), serif;
-      color: white;
-
-      background-color: #3C5468;
-    }
-
-
-    .header__topics {
-      @include flexRow(center, center, 1);
-
-      list-style: none;
-    }
-  }
 }
