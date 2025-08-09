@@ -5,8 +5,7 @@ import ContainerLayout from "~/common/ui/layout/container-layout";
 import style from "./style/style.module.scss";
 
 interface ITextSectionProps {
-  image: string;
-  text?: string;
+  text: string;
 }
 
 const TextSection: FC<ITextSectionProps> = () => {

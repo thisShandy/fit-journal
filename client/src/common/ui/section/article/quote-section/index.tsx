@@ -5,8 +5,7 @@ import ContainerLayout from "~/common/ui/layout/container-layout";
 import style from "./style/style.module.scss";
 
 interface IQuoteSectionProps {
-  image: string;
-  text?: string;
+  text: string;
 }
 
 const QuoteSection: FC<IQuoteSectionProps> = () => {
