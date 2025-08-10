@@ -1,74 +1,65 @@
 @use "src/common/ui/style/main" as *;
 
 .headSection {
-  @include flexColumn(start, start, 1);
+  @include flexColumn(start, flex-start, 1);
+
   width: 100%;
   padding-bottom: 1.5rem;
 
-  &__tags {
-    @include flexRow(center, start, .625);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.headTags {
+  @include flexRow(center, flex-start, .625);
+}
+
+.headContent {
+  @include flexColumn(flex-start, flex-start, .5);
+
+  &__title {
+    font-weight: 800;
+    font-size: 2.5rem;
+
+    @include md {
+      font-size: 1.75rem;
+    }
   }
 
-  &__text {
-    @include flexColumn(start, start, .5);
+  &__subtitle {
+    font-size: 1.25rem;
+    color: var(--dark-medium-color);
 
-    &Title {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--dark-color);
-
-      @include md {
-        font-size: 1.625rem;
-      }
-    }
-
-    &Description {
+    @include md {
       font-size: 1rem;
-      color: var(--dark-medium-color);
+    }
+  }
+}
 
-      @include md {
-        font-size: .875rem;
-      }
+.headInfo {
+  @include flexRow(center, flex-start, 1);
+
+  &__profile {
+    @include flexRow(center, flex-start, .5);
+  }
+
+  &__profileAvatar {
+    border-radius: 99rem;
+
+    object-fit: cover;
+  }
+
+  &__profileName {
+    font-weight: 500;
+    font-size: 1rem;
+
+    @include md {
+      font-size: .875rem;
     }
   }
 
   &__info {
-    @include flexRow(center, start, 1);
-
-    &Profile {
-      @include flexRow(center, start, .25);
-
-      .headSection__profileAvatar {
-        border-radius: 99rem;
-        object-fit: cover;
-      }
-
-      .headSection__profileName {
-        font-size: .75rem;
-        font-weight: 500;
-        color: var(--dark-color);
-
-        @include md {
-          font-size: .625rem;
-        }
-      }
-    }
-
-    &Time {
-      font-size: .625rem;
-      font-weight: 500;
-      color: var(--dark-light-color);
-
-      @include md {
-        font-size: .5rem;
-      }
-    }
+    font-size: .75rem;
+    font-weight: 500;
+    color: var(--dark-light-color);
   }
-
-  &__border {
-    width: 100%;
-    margin-top: .5rem;
-    border-bottom: 1px solid var(--border-color);
-  }
-
 }

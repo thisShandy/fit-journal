@@ -7,33 +7,31 @@ import style from "./style/style.module.scss";
 
 const HeadSection = () => {
   return (
-    <section className={style.headSection}>
+    <section>
       <ContainerLayout className={style.headSection}>
-        <div className={style.headSection__tags}>
+        <div className={style.headTags}>
           <Tag icon="award" title="#1 of this week" />
           <Tag icon="star" title="New" />
         </div>
 
-        <div className={style.headSection__text}>
-          <span className={style.headSection__textTitle}>You’re using ChatGPT wrong. Here’s how to prompt like a pro</span>
-          <span className={style.headSection__textDescription}>Smarter prompts lead to smarter responses.</span>
+        <div className={style.headContent}>
+          <span className={style.headContent__title}>You’re using ChatGPT wrong. Here’s how to prompt like a pro</span>
+          <span className={style.headContent__subtitle}>Smarter prompts lead to smarter responses.</span>
         </div>
 
-        <div className={style.headSection__info}>
-          <div className={style.headSection__infoProfile}>
+        <div className={style.headInfo}>
+          <div className={style.headInfo__profile}>
             <Image
               src="https://img.freepik.com/free-photo/handsome-man-smiling-happy-face-portrait-close-up_53876-139608.jpg"
-              width={24}
-              height={24}
+              width={32}
+              height={32}
               alt="avatar"
-              className={style.headSection__profileAvatar}
+              className={style.headInfo__profileAvatar}
             />
-            <span className={style.headSection__profileName}>James Ostin</span>
+            <span className={style.headInfo__profileName}>James Ostin</span>
           </div>
-          <span className={style.headSection__infoTime}>12 min read · June 15, 2025</span>
+          <span className={style.headInfo__info}>12 min read · June 15, 2025</span>
         </div>
-
-        <div className={style.headSection__border}></div>
       </ContainerLayout>
     </section>
   );
