@@ -1,0 +1,16 @@
+@use "src/common/ui/style/main" as *;
+
+.progress {
+  @include flexRow(center, flex-start);
+
+  height: 3px;
+  padding: 0 .25rem;
+
+  border-radius: 99rem;
+  background-color: var(--border-color);
+
+  &__line {
+    width: 100%;
+    height: 7px;
+  }
+}
