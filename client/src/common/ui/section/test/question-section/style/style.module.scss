@@ -1,1 +1,9 @@
 @use "src/common/ui/style/main" as *;
+
+.questionSection {
+  @include flexColumn(start, flex-start, 2);
+
+  width: 100%;
+  max-width: 640px;
+  padding: 1rem;
+}
