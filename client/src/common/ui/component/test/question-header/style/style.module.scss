@@ -1,0 +1,14 @@
+@use "src/common/ui/style/main" as *;
+
+.questionHeader {
+  @include flexColumn(center, center, 1);
+
+  &__title {
+    font-size: 2em;
+  }
+
+  &__subtitle {
+    font-size: 1em;
+    color: var(--dark-medium-color);
+  }
+}
