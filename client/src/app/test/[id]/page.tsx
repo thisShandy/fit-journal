@@ -7,10 +7,11 @@ const TestId = () => {
     { id: 1, text: "😵‍💫 Постоянный голод" },
     { id: 2, text: "😵‍💫 Постоянный голод" }
   ];
+
   return (
     <TestLayout>
       <MeetSection />
-      <QuestionSection buttons={test} question={"Мой вопрос"} />
+      {/*<QuestionSection buttons={test} question={"Мой вопрос"} />*/}
     </TestLayout>
   );
 };

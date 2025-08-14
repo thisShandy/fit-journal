@@ -1,4 +1,5 @@
 import type { FC } from "react";
+
 import style from "./style/style.module.scss";
 
 interface ICtaButtonProps {
@@ -8,7 +9,7 @@ interface ICtaButtonProps {
 
 const CtaButton: FC<ICtaButtonProps> = ({ title, onClick }) => {
   return (
-    <button className={style.ctaButton} type="button" onClick={onClick}>
+    <button type="button" className={style.ctaButton} onClick={onClick}>
       <span className={style.ctaButton__text}>{title}</span>
     </button>
   );

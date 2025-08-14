@@ -2,6 +2,10 @@
 
 .meetSection {
   @include flexColumn(center, flex-start, 2);
+
+  @include md {
+    gap: 1rem;
+  }
 }
 
 .meetImage {
@@ -9,10 +13,16 @@
   height: 372px;
 
   object-fit: cover;
+
+  @include md {
+    min-height: 256px;
+  }
 }
 
 .meetContinue {
   @include flexColumn(center, flex-start, .5);
+
+  width: 100%;
 
   &__text {
     font-size: .75rem;

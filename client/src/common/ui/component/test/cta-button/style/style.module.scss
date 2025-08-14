@@ -3,17 +3,30 @@
 .ctaButton {
   @include flexColumn(center, center);
 
-  height: 64px;
-  max-width: 608px;
   width: 100%;
+  min-height: 64px;
+  padding: .5rem 0;
 
   background: var(--secondary-color);
-  
+
+  @include transition;
   cursor: pointer;
 
-  &__text{
+  &:hover {
+    background: var(--secondary-color-hover);
+  }
+
+  @include md {
+    min-height: 48px;
+  }
+
+  &__text {
     color: var(--white-color);
     font-size: 1.5rem;
     font-weight: 700;
+
+    @include md {
+      font-size: 1.15rem;
+    }
   }
 }
