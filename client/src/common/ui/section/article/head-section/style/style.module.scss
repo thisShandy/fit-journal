@@ -1,5 +1,65 @@
 @use "src/common/ui/style/main" as *;
 
 .headSection {
+  @include flexColumn(start, flex-start, 1);
 
+  width: 100%;
+  padding-bottom: 1.5rem;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.headTags {
+  @include flexRow(center, flex-start, .625);
+}
+
+.headContent {
+  @include flexColumn(flex-start, flex-start, .5);
+
+  &__title {
+    font-weight: 800;
+    font-size: 2.5rem;
+
+    @include md {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    color: var(--dark-medium-color);
+
+    @include md {
+      font-size: 1rem;
+    }
+  }
+}
+
+.headInfo {
+  @include flexRow(center, flex-start, 1);
+
+  &__profile {
+    @include flexRow(center, flex-start, .5);
+  }
+
+  &__profileAvatar {
+    border-radius: 99rem;
+
+    object-fit: cover;
+  }
+
+  &__profileName {
+    font-weight: 500;
+    font-size: 1rem;
+
+    @include md {
+      font-size: .875rem;
+    }
+  }
+
+  &__info {
+    font-size: .75rem;
+    font-weight: 500;
+    color: var(--dark-light-color);
+  }
 }
