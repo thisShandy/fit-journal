@@ -1,10 +1,14 @@
 import type { FC, PropsWithChildren } from "react";
+import Header from "../../component/test/header";
+import Footer from "../../component/test/footer";
 
 const TestLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div>
-      {children}
-    </div>
+    <>
+      <Header />
+      <div>{children}</div>;
+      <Footer/>
+    </>
   );
 };
 
