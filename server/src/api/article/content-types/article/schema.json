@@ -14,5 +14,28 @@
       "localized": true
     }
   },
-  "attributes": {}
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "common.seo",
+      "repeatable": false,
+      "required": true
+    },
+    "head": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "article.head-section",
+      "repeatable": false,
+      "required": true
+    }
+  }
 }

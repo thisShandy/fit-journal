@@ -1,0 +1,11 @@
+@use "src/common/ui/style/main" as *;
+
+.image__card {
+  @include flexColumn(center, center, 1);
+
+  .imageCard__text {
+    font-size: .75rem;
+    font-weight: 400;
+    opacity: 50%;
+  }
+}

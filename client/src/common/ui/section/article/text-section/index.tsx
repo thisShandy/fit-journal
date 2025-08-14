@@ -8,11 +8,11 @@ interface ITextSectionProps {
   text: string;
 }
 
-const TextSection: FC<ITextSectionProps> = () => {
+const TextSection: FC<ITextSectionProps> = ({ text }) => {
   return (
     <section>
-      <ContainerLayout>
-
+      <ContainerLayout className={style.textSection}>
+        <span className={style.textSection__content}>{text}</span>
       </ContainerLayout>
     </section>
   );

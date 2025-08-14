@@ -1,5 +1,7 @@
 import type { FC } from "react";
 
+import Image from "next/image";
+
 import ContainerLayout from "~/common/ui/layout/container-layout";
 
 import style from "./style/style.module.scss";
@@ -9,11 +11,18 @@ interface IImageSectionProps {
   text?: string;
 }
 
-const ImageSection: FC<IImageSectionProps> = () => {
+const ImageSection: FC<IImageSectionProps> = ({ image, text }) => {
   return (
-    <section>
-      <ContainerLayout>
-
+    <section className={style.imageWrapper}>
+      <ContainerLayout className={style.imageSection}>
+        <Image
+          src={image}
+          alt={text || "image"}
+          width={640}
+          height={360}
+          className={style.imageSection__image}
+        />
+        {text && <p className={style.imageSection__text}>{text}</p>}
       </ContainerLayout>
     </section>
   );

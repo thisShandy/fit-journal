@@ -1,1 +1,8 @@
 @use "src/common/ui/style/main" as *;
+
+.textSection {
+
+  &__content {
+    text-align: left;
+  }
+}
