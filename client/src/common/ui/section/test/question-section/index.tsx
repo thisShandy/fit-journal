@@ -1,5 +1,9 @@
-import style from "./style/style.module.scss";
+import type { FC } from "react";
+
 import CtaButton from "~/common/ui/component/test/cta-button";
+import ContainerLayout from "~/common/ui/layout/container-layout";
+
+import style from "./style/style.module.scss";
 
 interface IButtonItem {
   id: number | string;
@@ -12,17 +16,17 @@ interface QuestionSectionProps {
   buttons: IButtonItem[];
 }
 
-const QuestionSection: React.FC<QuestionSectionProps> = ({ question, buttons }) => {
+const QuestionSection: FC<QuestionSectionProps> = ({ question, buttons }) => {
   return (
     <section className={style.questionSection}>
-      {question && <h2 className={style.questionSection__title}>{question}</h2>}
+      <ContainerLayout className={style.questionSection__content}>
+        {question && <h2 className={style.questionSection__title}>{question}</h2>}
 
-      <div className={style.buttonList}>
-        {Array.isArray(buttons) &&
-          buttons.map((btn) => (
-            <CtaButton key={btn.id} title={btn.text} onClick={btn.onClick} />
-          ))}
-      </div>
+        <div className={style.buttonList}>
+          {Array.isArray(buttons) &&
+            buttons.map(btn => <CtaButton key={btn.id} title={btn.text} onClick={btn.onClick} />)}
+        </div>
+      </ContainerLayout>
     </section>
   );
 };

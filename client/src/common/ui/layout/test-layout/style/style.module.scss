@@ -1,1 +1,8 @@
 @use "src/common/ui/style/main" as *;
+
+.testLayout {
+  @include flexColumn(center, space-between, 1);
+
+  height: 100%;
+  min-height: 100vh;
+}
