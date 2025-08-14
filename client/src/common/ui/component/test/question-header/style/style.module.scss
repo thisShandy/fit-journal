@@ -4,11 +4,15 @@
   @include flexColumn(center, center, 1);
 
   &__title {
+    font-weight: 800;
     font-size: 2em;
+    text-align: center;
+    line-height: 110%;
   }
 
   &__subtitle {
     font-size: 1em;
     color: var(--dark-medium-color);
+    text-align: center;
   }
 }
