@@ -1,1 +1,8 @@
 @use "src/common/ui/style/main" as *;
+
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin-inline: auto;
+}

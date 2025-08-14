@@ -20,6 +20,16 @@ const nextConfig: NextConfig = {
         hostname: "img.freepik.com",
         pathname: "**",
       },
+      {
+        protocol: "https",
+        hostname: "static.vecteezy.com",
+        pathname: "**",
+      },
+      {
+        protocol: "https",
+        hostname: "api.logobank.uz",
+        pathname: "**",
+      },
     ],
   }
 };

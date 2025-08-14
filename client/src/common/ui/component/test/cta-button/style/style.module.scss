@@ -1,0 +1,18 @@
+@use "src/common/ui/style/main" as *;
+
+.button__container {
+  @include flexRow(center, center);
+
+  width: 100%;
+  max-width: 608px;
+  height: 64px;
+
+  background-color: var(--secondary-color);
+
+  .button__container_title {
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    color: var(--white-color);
+  }
+}
