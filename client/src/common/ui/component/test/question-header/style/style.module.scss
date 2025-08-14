@@ -5,14 +5,22 @@
 
   &__title {
     font-weight: 800;
-    font-size: 2em;
+    font-size: 2rem;
     text-align: center;
     line-height: 110%;
+
+    @include md {
+      font-size: 1.5rem;
+    }
   }
 
   &__subtitle {
-    font-size: 1em;
+    font-size: 1rem;
     color: var(--dark-medium-color);
     text-align: center;
+
+    @include md {
+      font-size: .9rem;
+    }
   }
 }

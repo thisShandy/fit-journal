@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import CtaButton from "~/common/ui/component/test/cta-button";
 import QuestionHeader from "~/common/ui/component/test/question-header";
 import ContainerLayout from "~/common/ui/layout/container-layout";
 
@@ -23,6 +24,7 @@ const MeetSection = () => {
           className={style.meetImage}
         />
         <div className={style.meetContinue}>
+          <CtaButton title="Пройти тест и получить план!" />
           <span className={style.meetContinue__text}>🕒 Тест занимает 1 минуту — результат сразу на экране</span>
         </div>
       </ContainerLayout>
