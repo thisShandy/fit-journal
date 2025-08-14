@@ -1,1 +1,17 @@
 @use "src/common/ui/style/main" as *;
+
+.questionSection {
+  @include flexColumn(center, center, 2);
+
+  max-width: 608px;
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+.buttonList {
+  @include flexColumn(center, center, 2);
+
+  max-width: 608px;
+  width: 100%;
+}
