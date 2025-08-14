@@ -1,1 +1,9 @@
 @use "src/common/ui/style/main" as *;
+
+.footer {
+  @include flexRow(center, space-between, 1);
+
+  max-width: 326px;
+
+  margin: 0 auto;
+}
