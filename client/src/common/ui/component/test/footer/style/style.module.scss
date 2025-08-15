@@ -1,12 +1,26 @@
 @use "src/common/ui/style/main" as *;
 
+.footerWrapper {
+  margin-top: auto;
+}
+
 .footer {
   @include flexRow(center, space-between, 1);
 
-  max-width: 326px;
-
-  margin: 0 auto;
-  margin-top: auto;
-
+  padding-top: 2rem;
   padding-bottom: 2rem;
+
+  @include md {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__image {
+    filter: grayscale(1);
+
+    @include md {
+      width: 56px;
+      height: 56px;
+    }
+  }
 }

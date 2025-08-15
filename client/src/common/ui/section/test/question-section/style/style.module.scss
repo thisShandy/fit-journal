@@ -1,23 +1,15 @@
 @use "src/common/ui/style/main" as *;
 
 .questionSection {
-  max-width: 608px;
   width: 100%;
-
-  margin: 0 auto;
-
-  &__title {
-    text-align: center;
-  }
 }
 
-.questionSection__content {
-  @include flexColumn(center, center, 2);
+.questionContainer {
+  @include flexColumn(center, center, 1.5);
 }
 
 .buttonList {
-  @include flexColumn(center, center, 2);
+  @include flexColumn(center, center, 1);
 
-  max-width: 608px;
   width: 100%;
 }

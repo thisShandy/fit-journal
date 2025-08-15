@@ -1,5 +1,8 @@
-import style from "./style/style.module.scss";
 import Image from "next/image";
+
+import ContainerLayout from "~/common/ui/layout/container-layout";
+
+import style from "./style/style.module.scss";
 
 const logos = [
   "/assets/image/test/pro_tv.png",
@@ -9,17 +12,19 @@ const logos = [
 
 const Footer = () => {
   return (
-    <footer className={style.footer}>
-      {logos.map((src, i) => (
-        <Image
-          key={i}
-          src={src}
-          alt={`footer_logo_${i}`}
-          width={70}
-          height={70}
-          className={style.footerImg}
-        />
-      ))}
+    <footer className={style.footerWrapper}>
+      <ContainerLayout className={style.footer}>
+        {logos.map((src, i) => (
+          <Image
+            key={i}
+            src={src}
+            alt={`footer_logo_${i}`}
+            width={70}
+            height={70}
+            className={style.footer__image}
+          />
+        ))}
+      </ContainerLayout>
     </footer>
   );
 };

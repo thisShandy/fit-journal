@@ -1,3 +1,5 @@
+import type { FC } from "react";
+
 import Image from "next/image";
 
 import CtaButton from "~/common/ui/component/test/cta-button";
@@ -6,9 +8,11 @@ import ContainerLayout from "~/common/ui/layout/container-layout";
 
 import style from "./style/style.module.scss";
 
-// import banner from "/assets/image/test/banner.jpg";
+interface IMeetSectionProps {
+  handleNext: () => void;
+}
 
-const MeetSection = () => {
+const MeetSection: FC<IMeetSectionProps> = ({ handleNext }) => {
   return (
     <section>
       <ContainerLayout className={style.meetSection}>
@@ -24,7 +28,7 @@ const MeetSection = () => {
           className={style.meetImage}
         />
         <div className={style.meetContinue}>
-          <CtaButton title="Пройти тест и получить план!" />
+          <CtaButton title="Пройти тест и получить план!" onClick={handleNext} />
           <span className={style.meetContinue__text}>🕒 Тест занимает 1 минуту — результат сразу на экране</span>
         </div>
       </ContainerLayout>

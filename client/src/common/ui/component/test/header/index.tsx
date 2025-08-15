@@ -1,17 +1,16 @@
-import Progress from "~/common/ui/component/test/progress";
 import Link from "next/link";
 
-import style from "./style/style.module.scss";
 import ContainerLayout from "~/common/ui/layout/container-layout";
+
+import style from "./style/style.module.scss";
 
 const Header = () => {
   return (
-    <header>
-      <ContainerLayout>
+    <header className={style.headerWrapper}>
+      <ContainerLayout className={style.header}>
         <Link href="/" className={style.headerLogo}>
-          <span className={style.headerLogo__title}>FitJornual</span>
+          <span className={style.headerLogo__title}>FitJournal</span>
         </Link>
-        <Progress />
       </ContainerLayout>
     </header>
   );

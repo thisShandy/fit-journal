@@ -1,9 +1,21 @@
 @use "src/common/ui/style/main" as *;
 
+.headerWrapper {
+  width: 100%;
+}
+
+.header {
+  @include flexColumn(center, center, .5);
+
+  width: 100%;
+}
+
 .headerLogo {
   @include flexRow(center, center);
 
   padding: 0.625rem 1.25rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 
   background-color: var(--main-color);
 

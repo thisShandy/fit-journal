@@ -1,13 +1,14 @@
 import type { FC, PropsWithChildren } from "react";
-import Header from "../../component/test/header";
-import Footer from "../../component/test/footer";
+
+import Footer from "~/common/ui/component/test/footer";
+import Header from "~/common/ui/component/test/header";
 
 import style from "./style/style.module.scss";
 
 const TestLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className={style.testLayout}>
-      <div>
+      <div className={style.testLayout__content}>
         <Header />
         {children}
       </div>
