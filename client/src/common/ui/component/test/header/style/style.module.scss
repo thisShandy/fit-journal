@@ -1,1 +1,26 @@
 @use "src/common/ui/style/main" as *;
+
+.headerLogo {
+  @include flexRow(center, center);
+
+  padding: 0.625rem 1.25rem;
+
+  background-color: var(--main-color);
+
+  @include md {
+    padding: 0.5rem 1rem;
+  }
+
+  &__title {
+    font-family: var(--font-playfair), serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--white-color);
+    letter-spacing: 0.1rem;
+
+    @include md {
+      font-size: 1rem;
+      letter-spacing: 0.05rem;
+    }
+  }
+}

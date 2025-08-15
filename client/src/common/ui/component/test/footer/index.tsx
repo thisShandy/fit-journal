@@ -1,9 +1,25 @@
 import style from "./style/style.module.scss";
+import Image from "next/image";
+
+const logos = [
+  "/assets/image/test/pro_tv.png",
+  "/assets/image/test/digi24.png",
+  "/assets/image/test/liber_tatea.png"
+];
 
 const Footer = () => {
   return (
-    <footer>
-
+    <footer className={style.footer}>
+      {logos.map((src, i) => (
+        <Image
+          key={i}
+          src={src}
+          alt={`footer_logo_${i}`}
+          width={70}
+          height={70}
+          className={style.footerImg}
+        />
+      ))}
     </footer>
   );
 };

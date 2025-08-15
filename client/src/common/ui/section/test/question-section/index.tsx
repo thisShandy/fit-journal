@@ -19,14 +19,12 @@ interface QuestionSectionProps {
 const QuestionSection: FC<QuestionSectionProps> = ({ question, buttons }) => {
   return (
     <section className={style.questionSection}>
-      <ContainerLayout>
+      <ContainerLayout className={style.questionSection__content}>
         {question && <h2 className={style.questionSection__title}>{question}</h2>}
 
         <div className={style.buttonList}>
           {Array.isArray(buttons) &&
-            buttons.map((btn) => (
-              <CtaButton key={btn.id} title={btn.text} onClick={btn.onClick} />
-            ))}
+            buttons.map(btn => <CtaButton key={btn.id} title={btn.text} onClick={btn.onClick} />)}
         </div>
       </ContainerLayout>
     </section>
