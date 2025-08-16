@@ -4,6 +4,7 @@ import { useTest } from "~/common/model/hook/test/use-test";
 import MeetSection from "~/common/ui/section/test/meet-section";
 import ProcessSection from "~/common/ui/section/test/process-section";
 import QuestionSection from "~/common/ui/section/test/question-section";
+import ResultSection from "~/common/ui/section/test/result-section";
 
 const Test = () => {
   const { section, handleNext } = useTest();
@@ -48,6 +49,9 @@ const Test = () => {
     <ProcessSection
       key="process_section"
       handleNext={handleNext}
+    />,
+    <ResultSection
+      key="result_section"
     />
   ];
 
