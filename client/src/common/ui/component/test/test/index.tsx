@@ -51,7 +51,9 @@ const Test = () => {
     <ResultSection
       key="result_section"
       answers={test.map(
-        (testItem, index) => testItem.answers.find(el => el.id === answers[index])!
+        (testItem, index) => (
+          testItem.answers.find(el => el.id === answers[index])!
+        )
       )}
     />
   ];

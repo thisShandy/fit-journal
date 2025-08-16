@@ -142,7 +142,7 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
               className={style.resultOrder__infoImage}
             />
             <div className={style.resultOrder__infoFooter}>
-              <span className={style.resultOrder__infoSubtitle}>Ofertă specială!</span>
+              <span className={style.resultOrder__infoSubtitle}>Ofertă<br />specială!</span>
               <div className={style.resultOrder__infoPrice}>
                 <span className={style.resultOrder__infoPriceOld}>198 RON</span>
                 <span className={style.resultOrder__infoPriceNew}>99 RON</span>
@@ -150,36 +150,47 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
             </div>
           </div>
 
-          <div className={style.resultOrder__form}>
-            <div className={style.resultOrder__formGroup}>
-              <label className={style.resultOrder__formLabel} htmlFor="name">
-                Nume
-              </label>
-              <input
-                id="name"
-                type="text"
-                className={style.resultOrder__formInput}
-                placeholder="Apasă aici să scrii"
-              />
+          <form
+            action="https://greattop-goods.press/ozem-lite-slim/ro/send.php"
+            method="POST"
+          >
+            <div className={style.resultOrder__form}>
+              <div className={style.resultOrder__formGroup}>
+                <label className={style.resultOrder__formLabel} htmlFor="name">
+                  Nume
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  className={style.resultOrder__formInput}
+                  placeholder="Apasă aici să scrii"
+                  required
+                />
+              </div>
+
+              <div className={style.resultOrder__formGroup}>
+                <label className={style.resultOrder__formLabel} htmlFor="phone">
+                  Telefon
+                </label>
+                <input
+                  id="phone"
+                  name="phone"
+                  ref={phoneMask}
+                  type="tel"
+                  required
+                  pattern="\+40 7\d{2} \d{3} \d{3}"
+                  title="Introduceți un număr de telefon valid (+40 7xx xxx xxx)"
+                  className={style.resultOrder__formInput}
+                />
+              </div>
             </div>
 
-            <div className={style.resultOrder__formGroup}>
-              <label className={style.resultOrder__formLabel} htmlFor="phone">
-                Telefon
-              </label>
-              <input
-                id="phone"
-                ref={phoneMask}
-                type="tel"
-                className={style.resultOrder__formInput}
-              />
+            <div className={style.resultOrder__footer}>
+              <CtaButton title="🔥 Comandă cu reducere" type="submit" />
+              <span className={style.resultOrder__footerSubtitle}>Au mai rămas 7 pachete!</span>
             </div>
-          </div>
-
-          <div className={style.resultOrder__footer}>
-            <CtaButton title="🔥 Comandă cu reducere" />
-            <span className={style.resultOrder__footerSubtitle}>Au mai rămas 7 pachete!</span>
-          </div>
+          </form>
         </div>
       </ContainerLayout>
     </section>

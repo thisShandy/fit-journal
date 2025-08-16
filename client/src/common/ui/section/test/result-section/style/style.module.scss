@@ -153,6 +153,12 @@
 .resultOrder {
   @include flexColumn(center, center, 1.25);
 
+  form {
+    @include flexColumn(center, center, 1.25);
+
+    width: 100%;
+  }
+
   &__info {
     @include flexColumn(center, center, 1.5);
 

@@ -4,12 +4,13 @@ import style from "./style/style.module.scss";
 
 interface ICtaButtonProps {
   title: string;
+  type?: "button" | "reset" | "submit" | undefined;
   onClick?: () => void;
 }
 
-const CtaButton: FC<ICtaButtonProps> = ({ title, onClick }) => {
+const CtaButton: FC<ICtaButtonProps> = ({ title, type = "button", onClick }) => {
   return (
-    <button type="button" className={style.ctaButton} onClick={onClick}>
+    <button type={type} className={style.ctaButton} onClick={onClick}>
       <span className={style.ctaButton__text}>{title}</span>
     </button>
   );
