@@ -23,7 +23,7 @@ const usePhoneMask = () => {
     mask: "+40 7xx xxx xxx",
     replacement: { x: /\d/ },
     showMask: true,
-    separate: true,
+    separate: true
   });
 
   const maskString = "+40 7xx xxx xxx";
@@ -59,15 +59,15 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
   const help = [
     {
       id: 11,
-      text: "Формула активирует метаболизм, ускоряет сжигание калорий и запускает процесс снижения веса."
+      text: "Formula activează metabolismul, accelerează arderea caloriilor și inițiază procesul de slăbire."
     },
     {
       id: 12,
-      text: "Формула активирует метаболизм, ускоряет сжигание калорий и запускает процесс снижения веса."
+      text: "Formula activează metabolismul, accelerează arderea caloriilor și inițiază procesul de slăbire."
     },
     {
       id: 13,
-      text: "Формула повышает тонус, даёт заряд сил и заставляет организм расходовать калории даже в покое."
+      text: "Formula sporește tonusul, oferă un plus de energie și determină organismul să ardă calorii chiar și în repaus."
     }
   ];
 
@@ -75,51 +75,55 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
     <section>
       <ContainerLayout className={style.resultContainer}>
         <div className={style.resultHeader}>
-          <span className={style.resultHeader__subtitle}>По твоим ответам очевидно</span>
-          <span className={style.resultHeader__title}>Главная причина лишнего веса — {answers[0].text}</span>
+          <span className={style.resultHeader__subtitle}>Din răspunsurile tale este evident</span>
+          <span className={style.resultHeader__title}>
+            Principala cauză a excesului de greutate — {answers[0].text}
+          </span>
         </div>
 
         <div className={style.resultSolution}>
-          <span className={style.resultSolution__title}>Врачи уже нашли решение!</span>
+          <span className={style.resultSolution__title}>Medicii au găsit deja soluția!</span>
           <div className={style.resultSolution__content}>
             <Image
               src="/assets/image/test/doctor.jpg"
-              alt="doctor_image"
+              alt="imagine medic"
               width={376}
               height={338}
               className={style.resultSolution__contentImage}
             />
             <div className={style.resultSolution__contentInfo}>
               <span className={style.resultSolution__contentText}>
-                Команда нутрициологов разработала уникальную формулу, которая борется именно с твоей причиной.
+                O echipă de nutriționiști a dezvoltat o formulă unică ce combate exact cauza ta.
               </span>
               <span className={style.resultSolution__contentText}>
                 {help.find(el => el.id === answers[0].id)?.text || ""}
               </span>
             </div>
           </div>
-          <CtaButton title="🍏 Хочу контролировать аппетит" />
+          <CtaButton title="🍏 Vreau să-mi controlez pofta de mâncare" />
         </div>
 
         <div className={style.resultInfo}>
-          <span className={style.resultInfo__title}>Через 14 дней ты почувствуешь…</span>
+          <span className={style.resultInfo__title}>Peste 14 zile vei simți…</span>
           <div className={style.resultInfo__info}>
-            <span className={style.resultInfo__infoTitle}>✅ Минус до 5 кг уже в первую неделю</span>
-            <span className={style.resultInfo__infoTitle}>✅ Уйдёт тяга к еде вечером</span>
-            <span className={style.resultInfo__infoTitle}>✅ Больше энергии утром</span>
+            <span className={style.resultInfo__infoTitle}>
+              ✅ Până la −5 kg chiar din prima săptămână
+            </span>
+            <span className={style.resultInfo__infoTitle}>✅ Dispare pofta de mâncare seara</span>
+            <span className={style.resultInfo__infoTitle}>✅ Mai multă energie dimineața</span>
           </div>
-          <CtaButton title="🚀 Начать уже сегодня!" />
+          <CtaButton title="🚀 Începe chiar de astăzi!" />
         </div>
 
         <div className={style.resultResults}>
-          <span className={style.resultResults__title}>🏆 Сотни счастливых историй!</span>
+          <span className={style.resultResults__title}>🏆 Sute de povești fericite!</span>
           <div className={style.resultResults__content}>
-            {imageListMock.map((item) => (
+            {imageListMock.map(item => (
               <Image
                 key={item}
                 className={style.resultResults__contentImage}
                 src={item}
-                alt="before/after_image"
+                alt="imagine înainte/după"
                 width={400}
                 height={266}
               />
@@ -129,7 +133,7 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
 
         <div className={style.resultOrder}>
           <div className={style.resultOrder__info}>
-            <span className={style.resultOrder__infoTitle}>🔥 Только сегодня -50%</span>
+            <span className={style.resultOrder__infoTitle}>🔥 Doar astăzi −50%</span>
             <Image
               src="/assets/image/test/order-image.png"
               alt="ozem"
@@ -138,7 +142,7 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
               className={style.resultOrder__infoImage}
             />
             <div className={style.resultOrder__infoFooter}>
-              <span className={style.resultOrder__infoSubtitle}>Специальное предложение!</span>
+              <span className={style.resultOrder__infoSubtitle}>Ofertă specială!</span>
               <div className={style.resultOrder__infoPrice}>
                 <span className={style.resultOrder__infoPriceOld}>198 RON</span>
                 <span className={style.resultOrder__infoPriceNew}>99 RON</span>
@@ -148,7 +152,9 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
 
           <div className={style.resultOrder__form}>
             <div className={style.resultOrder__formGroup}>
-              <label className={style.resultOrder__formLabel} htmlFor="name">Имя</label>
+              <label className={style.resultOrder__formLabel} htmlFor="name">
+                Nume
+              </label>
               <input
                 id="name"
                 type="text"
@@ -158,7 +164,9 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
             </div>
 
             <div className={style.resultOrder__formGroup}>
-              <label className={style.resultOrder__formLabel} htmlFor="phone">Телефон</label>
+              <label className={style.resultOrder__formLabel} htmlFor="phone">
+                Telefon
+              </label>
               <input
                 id="phone"
                 ref={phoneMask}
@@ -169,8 +177,8 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
           </div>
 
           <div className={style.resultOrder__footer}>
-            <CtaButton title="🔥 Заказать со скидкой" />
-            <span className={style.resultOrder__footerSubtitle}>Осталось 7 упаковок!</span>
+            <CtaButton title="🔥 Comandă cu reducere" />
+            <span className={style.resultOrder__footerSubtitle}>Au mai rămas 7 pachete!</span>
           </div>
         </div>
       </ContainerLayout>

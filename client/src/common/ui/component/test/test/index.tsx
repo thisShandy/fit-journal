@@ -11,27 +11,27 @@ const Test = () => {
 
   const test = [
     {
-      question: "Что мешает тебе похудеть?",
+      question: "Ce te împiedică să slăbești?",
       answers: [
-        { id: 11, text: "😣 Постоянный голод" },
-        { id: 12, text: "🐌 Медленный метаболизм" },
-        { id: 13, text: "😴 Нет сил на спорт" }
+        { id: 11, text: "😣 Foamea constantă" },
+        { id: 12, text: "🐌 Metabolism lent" },
+        { id: 13, text: "😴 Nu ai energie pentru sport" }
       ]
     },
     {
-      question: "Сколько килограммов хочешь убрать?",
+      question: "Câte kilograme vrei să dai jos?",
       answers: [
-        { id: 21, text: "⭐ 2 – 5 кг" },
-        { id: 22, text: "⭐⭐ 5 – 10 кг" },
-        { id: 23, text: "⭐⭐⭐ 10+ кг" }
+        { id: 21, text: "⭐ 2 – 5 kg" },
+        { id: 22, text: "⭐⭐ 5 – 10 kg" },
+        { id: 23, text: "⭐⭐⭐ 10+ kg" }
       ]
     },
     {
-      question: "Когда хочешь увидеть первые результаты?",
+      question: "Când vrei să vezi primele rezultate?",
       answers: [
-        { id: 31, text: "⚡️ Уже через неделю" },
-        { id: 32, text: "🌙 Постепенно, без спешки" },
-        { id: 33, text: "🎯 В течение месяца" }
+        { id: 31, text: "⚡️ Peste o săptămână" },
+        { id: 32, text: "🌙 Treptat, fără grabă" },
+        { id: 33, text: "🎯 În decurs de o lună" }
       ]
     }
   ];
@@ -47,23 +47,16 @@ const Test = () => {
         handleNext={handleNext}
       />
     )),
-    <ProcessSection
-      key="process_section"
-      handleNext={handleNext}
-    />,
+    <ProcessSection key="process_section" handleNext={handleNext} />,
     <ResultSection
       key="result_section"
-      answers={test.map((testItem, index) => (
-        testItem.answers.find(el => el.id === answers[index])!
-      ))}
+      answers={test.map(
+        (testItem, index) => testItem.answers.find(el => el.id === answers[index])!
+      )}
     />
   ];
 
-  return (
-    <>
-      {list[section]}
-    </>
-  );
+  return <>{list[section]}</>;
 };
 
 export default Test;

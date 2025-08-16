@@ -8,9 +8,9 @@ import ContainerLayout from "~/common/ui/layout/container-layout";
 import style from "./style/style.module.scss";
 
 const checksMock = [
-  "Анализируем ваши ответы",
-  "Персонализируем ваш план",
-  "Готовим ваши результаты",
+  "Analizăm răspunsurile tale",
+  "Personalizăm planul tău",
+  "Pregătim rezultatele tale"
 ];
 
 interface IProcessSectionProps {
@@ -29,13 +29,18 @@ const ProcessSection: FC<IProcessSectionProps> = ({ handleNext }) => {
   return (
     <section>
       <ContainerLayout className={style.processContainer}>
-        <QuestionHeader
-          title="Создаем ваш личный план похудения"
-        />
+        <QuestionHeader title="Îți creăm planul personal de slăbire" />
         <div className={style.processList}>
           {checksMock.map((item, index) => (
             <div key={`check_${index}`} className={style.processCheck}>
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={style.processCheck__icon}>
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className={style.processCheck__icon}
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"

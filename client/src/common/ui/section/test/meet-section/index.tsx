@@ -17,19 +17,19 @@ const MeetSection: FC<IMeetSectionProps> = ({ handleNext }) => {
     <section>
       <ContainerLayout className={style.meetSection}>
         <QuestionHeader
-          title="🔥 Узнай, что мешает худеть — начни менять тело за 7 дней"
-          subtitle="💡 Всего 3 вопроса — и ты узнаешь свой персональный путь к стройности"
+          title="🔥 Află ce te împiedică să slăbești — începe să-ți schimbi corpul în 7 zile"
+          subtitle="💡 Doar 3 întrebări — și vei afla drumul tău personal spre siluetă"
         />
         <Image
           src="/assets/image/test/banner.jpg"
-          alt="test_banner"
+          alt="banner test"
           width={1280}
           height={720}
           className={style.meetImage}
         />
         <div className={style.meetContinue}>
-          <CtaButton title="Пройти тест и получить план!" onClick={handleNext} />
-          <span className={style.meetContinue__text}>🕒 Тест занимает 1 минуту — результат сразу на экране</span>
+          <CtaButton title="Treci testul și primește planul!" onClick={handleNext} />
+          <span className={style.meetContinue__text}>🕒 Testul durează 1 minut — rezultatul apare imediat pe ecran</span>
         </div>
       </ContainerLayout>
     </section>
