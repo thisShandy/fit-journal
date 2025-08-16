@@ -114,6 +114,12 @@
 .resultResults {
   @include flexColumn(center, center, 1.5);
 
+  @include md {
+    .resultResults__contentImage:last-child {
+      display: none;
+    }
+  }
+
   &__title {
     font-weight: 700;
     font-size: 2.25rem;
@@ -130,7 +136,7 @@
     grid-column-gap: 24px;
     grid-row-gap: 24px;
 
-    @include sm {
+    @include md {
       grid-template-columns: 1fr;
     }
   }

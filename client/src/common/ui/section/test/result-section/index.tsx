@@ -8,6 +8,13 @@ import ContainerLayout from "~/common/ui/layout/container-layout";
 
 import style from "./style/style.module.scss";
 
+const imageListMock = [
+  "/assets/image/test/result-image-1.png",
+  "/assets/image/test/result-image-2.png",
+  "/assets/image/test/result-image-4.png",
+  "/assets/image/test/result-image-3.png"
+];
+
 const usePhoneMask = () => {
   const inputRef = useMask({
     mask: "+40 7xx xxx xxx",
@@ -85,10 +92,16 @@ const ResultSection = () => {
         <div className={style.resultResults}>
           <span className={style.resultResults__title}>🏆 Сотни счастливых историй!</span>
           <div className={style.resultResults__content}>
-            <Image src="/assets/image/test/result-image-1.png" alt="before/after_image" width={400} height={266} className={style.resultResults__contentImage} />
-            <Image src="/assets/image/test/result-image-2.png" alt="before/after_image" width={400} height={266} className={style.resultResults__contentImage} />
-            <Image src="/assets/image/test/result-image-3.png" alt="before/after_image" width={400} height={266} className={style.resultResults__contentImage} />
-            <Image src="/assets/image/test/result-image-4.png" alt="before/after_image" width={400} height={266} className={style.resultResults__contentImage} />
+            {imageListMock.map((item) => (
+              <Image
+                key={item}
+                className={style.resultResults__contentImage}
+                src={item}
+                alt="before/after_image"
+                width={400}
+                height={266}
+              />
+            ))}
           </div>
         </div>
 
