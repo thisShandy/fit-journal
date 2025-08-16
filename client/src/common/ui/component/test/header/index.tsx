@@ -8,7 +8,13 @@ const Header = () => {
   return (
     <header className={style.headerWrapper}>
       <ContainerLayout className={style.header}>
-        <Link href="/" className={style.headerLogo}>
+        <Link
+          href="/"
+          className={style.headerLogo}
+          style={{
+            pointerEvents: "none"
+          }}
+        >
           <span className={style.headerLogo__title}>FitJournal</span>
         </Link>
       </ContainerLayout>
