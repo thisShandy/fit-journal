@@ -41,6 +41,7 @@ const Test = () => {
     ...test.map((testItem, index) => (
       <QuestionSection
         key={`block_question_${index}`}
+        index={index}
         question={testItem.question}
         buttons={testItem.answers}
         handleNext={handleNext}

@@ -13,16 +13,17 @@ interface IButtonItem {
 }
 
 interface QuestionSectionProps {
+  index: number;
   question: string;
   buttons: IButtonItem[];
   handleNext: () => void;
 }
 
-const QuestionSection: FC<QuestionSectionProps> = ({ question, buttons, handleNext }) => {
+const QuestionSection: FC<QuestionSectionProps> = ({ index, question, buttons, handleNext }) => {
   return (
     <section className={style.questionSection}>
       <ContainerLayout className={style.questionContainer}>
-        <Progress />
+        <Progress step={index} />
         <QuestionHeader
           title={question}
         />
