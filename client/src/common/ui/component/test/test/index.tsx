@@ -7,7 +7,7 @@ import QuestionSection from "~/common/ui/section/test/question-section";
 import ResultSection from "~/common/ui/section/test/result-section";
 
 const Test = () => {
-  const { section, handleNext } = useTest();
+  const { section, answers, handleNext } = useTest();
 
   const test = [
     {
@@ -41,6 +41,7 @@ const Test = () => {
     ...test.map((testItem, index) => (
       <QuestionSection
         key={`block_question_${index}`}
+        index={index}
         question={testItem.question}
         buttons={testItem.answers}
         handleNext={handleNext}
@@ -52,6 +53,9 @@ const Test = () => {
     />,
     <ResultSection
       key="result_section"
+      answers={test.map((testItem, index) => (
+        testItem.answers.find(el => el.id === answers[index])!
+      ))}
     />
   ];
 

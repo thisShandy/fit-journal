@@ -1,7 +1,13 @@
 @use "src/common/ui/style/main" as *;
 
 .resultContainer {
+  @include flexColumn(center, center, 3.5);
+
   max-width: 856px;
+
+  @include md {
+    gap: 2rem;
+  }
 }
 
 .resultHeader {
@@ -28,5 +34,246 @@
     @include md {
       font-size: 1.5rem;
     }
+  }
+}
+
+.resultSolution {
+  @include flexColumn(center, center, 1);
+
+  &__title {
+    font-weight: 700;
+    font-size: 2.25rem;
+    text-align: center;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__content {
+    @include flexRow(center, space-between, 2);
+
+    @include md {
+      @include flexColumn(center, center, 1);
+    }
+  }
+
+  &__contentImage {
+    width: 100%;
+    max-width: 376px;
+    max-height: 338px;
+
+    object-fit: cover;
+
+    @include md {
+      max-height: 256px;
+    }
+  }
+
+  &__contentInfo {
+    @include flexColumn(center, center, 1.25);
+    max-width: 500px;
+  }
+
+  &__contentText {
+    font-size: 1.25rem;
+
+    @include md {
+      font-size: 1rem;
+    }
+  }
+}
+
+.resultInfo {
+  @include flexColumn(center, center, 2);
+
+  &__title {
+    font-weight: 700;
+    font-size: 2.25rem;
+    text-align: center;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__info {
+    @include flexColumn(flex-start, center, 1.5);
+  }
+
+  &__infoTitle {
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    @include md {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.resultResults {
+  @include flexColumn(center, center, 1.5);
+
+  @include md {
+    .resultResults__contentImage:last-child {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 2.25rem;
+    text-align: center;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+
+    @include md {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__contentImage {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+
+    object-fit: contain;
+  }
+}
+
+.resultOrder {
+  @include flexColumn(center, center, 1.25);
+
+  &__info {
+    @include flexColumn(center, center, 1.5);
+
+    padding: 1.5rem;
+
+    background-color: var(--secondary-color-light);
+    border: 2px solid var(--secondary-color);
+
+    @include md {
+      padding: 1rem;
+    }
+  }
+
+  &__infoTitle {
+    font-weight: 700;
+    font-size: 1.75rem;
+    text-align: center;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__infoImage {
+    width: 100%;
+    max-width: 256px;
+    height: auto;
+
+    object-fit: contain;
+
+    @include md {
+      max-height: 208px;
+    }
+  }
+
+  &__infoFooter {
+    @include flexRow(center, space-between, .25);
+    width: 100%;
+  }
+
+  &__infoSubtitle {
+    max-width: 175px;
+
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    @include md {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__infoPrice {
+    @include flexColumn(flex-end, space-between, .25);
+  }
+
+  &__infoPriceOld {
+    font-size: 1rem;
+    color: var(--dark-medium-color);
+    text-decoration: line-through;
+
+    @include md {
+      font-size: .875rem;
+    }
+  }
+
+  &__infoPriceNew {
+    padding: .25rem .5rem;
+
+    background: #6CC578;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white-color);
+
+    @include md {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__form {
+    @include flexColumn(center, center, .75);
+
+    width: 100%;
+  }
+
+  &__formGroup {
+    @include flexColumn(flex-start, center, .25);
+
+    width: 100%;
+  }
+
+  &__formLabel {
+    font-size: .875rem;
+    color: var(--dark-medium-color);
+
+    @include md {
+      font-size: 1rem;
+    }
+  }
+
+  &__formInput {
+    width: 100%;
+    padding: 1rem;
+
+    border: 2px solid var(--secondary-color);
+
+    font-size: 1.15rem;
+
+    &::placeholder {
+      font-size: 1.15rem;
+      color: var(--dark-medium-color);
+    }
+  }
+
+  &__footer {
+    @include flexColumn(center, center, .5);
+    width: 100%;
+  }
+
+  &__footerSubtitle {
+    font-size: .875rem;
+    color: var(--dark-medium-color);
   }
 }

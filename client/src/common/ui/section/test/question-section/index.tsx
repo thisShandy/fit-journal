@@ -7,22 +7,23 @@ import ContainerLayout from "~/common/ui/layout/container-layout";
 
 import style from "./style/style.module.scss";
 
-interface IButtonItem {
-  id: number | string;
+export interface IButtonItem {
+  id: number;
   text: string;
 }
 
 interface QuestionSectionProps {
+  index: number;
   question: string;
   buttons: IButtonItem[];
-  handleNext: () => void;
+  handleNext: (answer?: number) => void;
 }
 
-const QuestionSection: FC<QuestionSectionProps> = ({ question, buttons, handleNext }) => {
+const QuestionSection: FC<QuestionSectionProps> = ({ index, question, buttons, handleNext }) => {
   return (
     <section className={style.questionSection}>
       <ContainerLayout className={style.questionContainer}>
-        <Progress />
+        <Progress step={index} />
         <QuestionHeader
           title={question}
         />
@@ -31,7 +32,7 @@ const QuestionSection: FC<QuestionSectionProps> = ({ question, buttons, handleNe
             <CtaButton
               key={`answer_${btn.id}`}
               title={btn.text}
-              onClick={handleNext}
+              onClick={() => handleNext(btn.id)}
             />
           ))}
         </div>
