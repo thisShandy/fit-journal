@@ -1,6 +1,8 @@
 @use "src/common/ui/style/main" as *;
 
 .resultContainer {
+  @include flexColumn(center, center, 3.5);
+
   max-width: 856px;
 }
 
@@ -28,5 +30,214 @@
     @include md {
       font-size: 1.5rem;
     }
+  }
+}
+
+.resultSolution {
+  @include flexColumn(center, center, 1);
+
+  &__title {
+    font-weight: 700;
+    font-size: 2.25rem;
+    text-align: center;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__content {
+    @include flexRow(center, space-between, 2);
+
+    @include md {
+      @include flexColumn(center, center, 1);
+    }
+  }
+
+  &__contentImage {
+    max-width: 376px;
+    max-height: 338px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__contentInfo {
+    @include flexColumn(center, center, 1.25);
+    max-width: 500px;
+  }
+
+  &__contentText {
+    font-size: 1.25rem;
+
+    @include md {
+      font-size: 1rem;
+    }
+  }
+}
+
+.resultInfo {
+  @include flexColumn(center, center, 2);
+
+  &__title {
+    font-weight: 700;
+    font-size: 2.25rem;
+    text-align: center;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__info {
+    @include flexColumn(flex-start, center, 1.5);
+  }
+
+  &__infoTitle {
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    @include md {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.resultResults {
+  @include flexColumn(center, center, 1.5);
+
+  &__title {
+    font-weight: 700;
+    font-size: 2.25rem;
+    text-align: center;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+
+    @include sm {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__contentImage {
+    max-width: 400px;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.resultOrder {
+  @include flexColumn(center, center, 1.25);
+
+  &__info {
+    @include flexColumn(center, center, 1.5);
+
+    padding: 2.25rem 1.5rem;
+
+    background-color: var(--secondary-color-light);
+    border: 2px solid var(--secondary-color);
+  }
+
+  &__infoTitle {
+    font-weight: 700;
+    font-size: 1.75rem;
+    text-align: center;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__infoImage {
+    max-width: 256px;
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__infoFooter {
+    @include flexRow(center, space-between, .25);
+    width: 100%;
+  }
+
+  &__infoSubtitle {
+    max-width: 175px;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    @include md {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__infoPrice {
+    @include flexColumn(flex-end, space-between, .25);
+  }
+
+  &__infoPriceOld {
+    font-size: 1rem;
+    color: var(--dark-medium-color);
+    text-decoration: line-through;
+
+    @include md {
+      font-size: .875rem;
+    }
+  }
+
+  &__infoPriceNew {
+    padding: .25rem .5rem;
+    background: #6CC578;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white-color);
+
+    @include md {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__form {
+    @include flexColumn(center, center, .75);
+    width: 100%;
+  }
+
+  &__formGroup {
+    @include flexColumn(flex-start, center, .125);
+    width: 100%;
+  }
+
+  &__formLabel {
+    font-size: .75rem;
+    color: var(--dark-medium-color);
+  }
+
+  &__formInput {
+    padding: .75rem .5rem;
+    border: 2px solid var(--secondary-color);
+    width: 100%;
+
+    &::placeholder {
+      font-size: .875rem;
+      color: var(--dark-medium-color);
+    }
+  }
+
+  &__footer {
+    @include flexColumn(center, center, .5);
+    width: 100%;
+  }
+
+  &__footerSubtitle {
+    font-size: .75rem;
+    color: var(--dark-medium-color);
   }
 }
