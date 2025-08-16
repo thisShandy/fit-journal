@@ -2,6 +2,7 @@ import type { FC } from "react";
 import type { IButtonItem } from "~/common/ui/section/test/question-section";
 
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
 import { useMask } from "@react-input/mask";
@@ -55,6 +56,38 @@ interface IResultSectionProps {
 
 const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
   const phoneMask = usePhoneMask();
+
+  const searchParams = useSearchParams();
+  const flow_id = searchParams.get("flow_id");
+  const geo = searchParams.get("geo");
+  const sub1 = searchParams.get("sub1");
+  const sub2 = searchParams.get("sub2");
+  const sub3 = searchParams.get("sub3");
+  const sub4 = searchParams.get("sub4");
+  const sub5 = searchParams.get("sub5");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("/api/metacpa", {
+        method: "POST",
+        body: formData
+      });
+
+      window.location.href = "/success";
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Submission failed");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+    } finally {
+    }
+  };
 
   const help = [
     {
@@ -159,8 +192,7 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
 
           <form
             id="offer"
-            action="https://greattop-goods.press/ozem-lite-slim/ro/send.php"
-            method="POST"
+            onSubmit={handleSubmit}
           >
             <div className={style.resultOrder__form}>
               <div className={style.resultOrder__formGroup}>
@@ -192,6 +224,14 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
                   className={style.resultOrder__formInput}
                 />
               </div>
+
+              <input type="hidden" name="flow_id" value={flow_id || ""} />
+              <input type="hidden" name="geo" value={geo || ""} />
+              {sub1 && <input type="hidden" name="sub1" value={sub1} />}
+              {sub2 && <input type="hidden" name="sub2" value={sub2} />}
+              {sub3 && <input type="hidden" name="sub3" value={sub3} />}
+              {sub4 && <input type="hidden" name="sub4" value={sub4} />}
+              {sub5 && <input type="hidden" name="sub5" value={sub5} />}
             </div>
 
             <div className={style.resultOrder__footer}>
