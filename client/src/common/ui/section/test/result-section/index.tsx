@@ -1,9 +1,12 @@
-import { useEffect } from "react";
-import ContainerLayout from "~/common/ui/layout/container-layout";
-import style from "./style/style.module.scss";
-import CtaButton from "~/common/ui/component/test/cta-button";
 import Image from "next/image";
+import { useEffect } from "react";
+
 import { useMask } from "@react-input/mask";
+
+import CtaButton from "~/common/ui/component/test/cta-button";
+import ContainerLayout from "~/common/ui/layout/container-layout";
+
+import style from "./style/style.module.scss";
 
 const usePhoneMask = () => {
   const inputRef = useMask({

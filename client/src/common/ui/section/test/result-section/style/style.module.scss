@@ -4,6 +4,10 @@
   @include flexColumn(center, center, 3.5);
 
   max-width: 856px;
+
+  @include md {
+    gap: 2rem;
+  }
 }
 
 .resultHeader {
@@ -55,10 +59,15 @@
   }
 
   &__contentImage {
+    width: 100%;
     max-width: 376px;
     max-height: 338px;
-    width: 100%;
+
     object-fit: cover;
+
+    @include md {
+      max-height: 256px;
+    }
   }
 
   &__contentInfo {
@@ -127,9 +136,10 @@
   }
 
   &__contentImage {
+    width: 100%;
     max-width: 400px;
     height: auto;
-    width: 100%;
+
     object-fit: contain;
   }
 }
@@ -140,10 +150,14 @@
   &__info {
     @include flexColumn(center, center, 1.5);
 
-    padding: 2.25rem 1.5rem;
+    padding: 1.5rem;
 
     background-color: var(--secondary-color-light);
     border: 2px solid var(--secondary-color);
+
+    @include md {
+      padding: 1rem;
+    }
   }
 
   &__infoTitle {
@@ -157,10 +171,15 @@
   }
 
   &__infoImage {
+    width: 100%;
     max-width: 256px;
     height: auto;
-    width: 100%;
+
     object-fit: contain;
+
+    @include md {
+      max-height: 208px;
+    }
   }
 
   &__infoFooter {
@@ -170,6 +189,7 @@
 
   &__infoSubtitle {
     max-width: 175px;
+
     font-weight: 700;
     font-size: 1.5rem;
 
@@ -194,6 +214,7 @@
 
   &__infoPriceNew {
     padding: .25rem .5rem;
+
     background: #6CC578;
 
     font-size: 1.5rem;
@@ -207,26 +228,35 @@
 
   &__form {
     @include flexColumn(center, center, .75);
+
     width: 100%;
   }
 
   &__formGroup {
-    @include flexColumn(flex-start, center, .125);
+    @include flexColumn(flex-start, center, .25);
+
     width: 100%;
   }
 
   &__formLabel {
-    font-size: .75rem;
+    font-size: .875rem;
     color: var(--dark-medium-color);
+
+    @include md {
+      font-size: 1rem;
+    }
   }
 
   &__formInput {
-    padding: .75rem .5rem;
-    border: 2px solid var(--secondary-color);
     width: 100%;
+    padding: 1rem;
+
+    border: 2px solid var(--secondary-color);
+
+    font-size: 1.15rem;
 
     &::placeholder {
-      font-size: .875rem;
+      font-size: 1.15rem;
       color: var(--dark-medium-color);
     }
   }
@@ -237,7 +267,7 @@
   }
 
   &__footerSubtitle {
-    font-size: .75rem;
+    font-size: .875rem;
     color: var(--dark-medium-color);
   }
 }
