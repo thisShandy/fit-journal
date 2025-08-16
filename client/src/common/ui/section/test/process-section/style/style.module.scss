@@ -1,3 +1,88 @@
 @use "src/common/ui/style/main" as *;
 
+.processContainer {
+  @include flexColumn(center, center, 2);
+}
 
+.processList {
+  @include flexColumn(flex-start, center, 1);
+}
+
+.processCheck {
+  @include flexRow(center, center, 1.25);
+
+  &:nth-child(1) {
+    .processCheck__icon {
+      path {
+        animation-delay: .5s;
+      }
+    }
+  }
+
+  &:nth-child(2) {
+    .processCheck__icon {
+      path {
+        animation-delay: .8s;
+      }
+    }
+  }
+
+  &:nth-child(3) {
+    .processCheck__icon {
+      path {
+        animation-delay: 1.85s;
+      }
+    }
+  }
+
+  &__icon {
+    path {
+      fill: var(--secondary-color);
+
+      animation: fill ease-in-out .15s backwards;
+    }
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 1.25rem;
+  }
+}
+
+@keyframes fill {
+  0% {
+    fill: var(--secondary-color-light);
+  }
+
+  100% {
+    fill: var(--secondary-color);
+  }
+}
+
+.processBar {
+  width: 100%;
+  height: 9px;
+
+  border-radius: 99rem;
+  background-color: var(--secondary-color-light);
+
+  &__line {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 99rem;
+    background-color: var(--secondary-color);
+
+    animation: loading ease-in-out 2s backwards;
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

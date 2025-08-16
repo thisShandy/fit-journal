@@ -2,6 +2,7 @@
 
 import { useTest } from "~/common/model/hook/test/use-test";
 import MeetSection from "~/common/ui/section/test/meet-section";
+import ProcessSection from "~/common/ui/section/test/process-section";
 import QuestionSection from "~/common/ui/section/test/question-section";
 
 const Test = () => {
@@ -35,7 +36,7 @@ const Test = () => {
   ];
 
   const list = [
-    <MeetSection key="block_0" handleNext={handleNext} />,
+    <MeetSection key="meet_section" handleNext={handleNext} />,
     ...test.map((testItem, index) => (
       <QuestionSection
         key={`block_question_${index}`}
@@ -43,7 +44,11 @@ const Test = () => {
         buttons={testItem.answers}
         handleNext={handleNext}
       />
-    ))
+    )),
+    <ProcessSection
+      key="process_section"
+      handleNext={handleNext}
+    />
   ];
 
   return (
