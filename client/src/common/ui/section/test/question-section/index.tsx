@@ -7,8 +7,8 @@ import ContainerLayout from "~/common/ui/layout/container-layout";
 
 import style from "./style/style.module.scss";
 
-interface IButtonItem {
-  id: number | string;
+export interface IButtonItem {
+  id: number;
   text: string;
 }
 
@@ -16,7 +16,7 @@ interface QuestionSectionProps {
   index: number;
   question: string;
   buttons: IButtonItem[];
-  handleNext: () => void;
+  handleNext: (answer?: number) => void;
 }
 
 const QuestionSection: FC<QuestionSectionProps> = ({ index, question, buttons, handleNext }) => {
@@ -32,7 +32,7 @@ const QuestionSection: FC<QuestionSectionProps> = ({ index, question, buttons, h
             <CtaButton
               key={`answer_${btn.id}`}
               title={btn.text}
-              onClick={handleNext}
+              onClick={() => handleNext(btn.id)}
             />
           ))}
         </div>

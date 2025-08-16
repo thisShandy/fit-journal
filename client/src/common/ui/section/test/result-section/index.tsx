@@ -1,3 +1,6 @@
+import type { FC } from "react";
+import type { IButtonItem } from "~/common/ui/section/test/question-section";
+
 import Image from "next/image";
 import { useEffect } from "react";
 
@@ -46,15 +49,34 @@ const usePhoneMask = () => {
   return inputRef;
 };
 
-const ResultSection = () => {
+interface IResultSectionProps {
+  answers: IButtonItem[];
+}
+
+const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
   const phoneMask = usePhoneMask();
+
+  const help = [
+    {
+      id: 11,
+      text: "Формула активирует метаболизм, ускоряет сжигание калорий и запускает процесс снижения веса."
+    },
+    {
+      id: 12,
+      text: "Формула активирует метаболизм, ускоряет сжигание калорий и запускает процесс снижения веса."
+    },
+    {
+      id: 13,
+      text: "Формула повышает тонус, даёт заряд сил и заставляет организм расходовать калории даже в покое."
+    }
+  ];
 
   return (
     <section>
       <ContainerLayout className={style.resultContainer}>
         <div className={style.resultHeader}>
           <span className={style.resultHeader__subtitle}>По твоим ответам очевидно</span>
-          <span className={style.resultHeader__title}>Главная причина лишнего веса — ⚡️[проблема]</span>
+          <span className={style.resultHeader__title}>Главная причина лишнего веса — {answers[0].text}</span>
         </div>
 
         <div className={style.resultSolution}>
@@ -72,7 +94,7 @@ const ResultSection = () => {
                 Команда нутрициологов разработала уникальную формулу, которая борется именно с твоей причиной.
               </span>
               <span className={style.resultSolution__contentText}>
-                [Формула активирует метаболизм, ускоряет сжигание калорий и запускает процесс снижения веса.](текст зависит от ответа)
+                {help.find(el => el.id === answers[0].id)?.text || ""}
               </span>
             </div>
           </div>
