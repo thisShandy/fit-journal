@@ -71,6 +71,13 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
     }
   ];
 
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section>
       <ContainerLayout className={style.resultContainer}>
@@ -100,7 +107,7 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
               </span>
             </div>
           </div>
-          <CtaButton title="🍏 Vreau să-mi controlez pofta de mâncare" />
+          <CtaButton title="🍏 Vreau să-mi controlez pofta de mâncare" onClick={() => handleScroll("offer")} />
         </div>
 
         <div className={style.resultInfo}>
@@ -112,7 +119,7 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
             <span className={style.resultInfo__infoTitle}>✅ Dispare pofta de mâncare seara</span>
             <span className={style.resultInfo__infoTitle}>✅ Mai multă energie dimineața</span>
           </div>
-          <CtaButton title="🚀 Începe chiar de astăzi!" />
+          <CtaButton title="🚀 Începe chiar de astăzi!" onClick={() => handleScroll("offer")} />
         </div>
 
         <div className={style.resultResults}>
@@ -151,6 +158,7 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
           </div>
 
           <form
+            id="offer"
             action="https://greattop-goods.press/ozem-lite-slim/ro/send.php"
             method="POST"
           >
@@ -187,7 +195,7 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
             </div>
 
             <div className={style.resultOrder__footer}>
-              <CtaButton title="🔥 Comandă cu reducere" type="submit" />
+              <CtaButton title="🔥 Comandă cu reducere" type="submit"/>
               <span className={style.resultOrder__footerSubtitle}>Au mai rămas 7 pachete!</span>
             </div>
           </form>
