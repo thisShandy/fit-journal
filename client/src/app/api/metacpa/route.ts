@@ -16,7 +16,7 @@ export async function POST(request: Request) {
       request.headers.get("x-real-ip") ||
       "unknown";
 
-    data.ip = clientIp.split(',')[0].trim();
+    data.ip = clientIp.split(",")[0].trim();
 
     const queryParams = new URLSearchParams();
     for (const [key, value] of Object.entries(data)) {

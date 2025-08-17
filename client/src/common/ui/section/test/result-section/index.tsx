@@ -1,11 +1,10 @@
 import type { FC } from "react";
 import type { IButtonItem } from "~/common/ui/section/test/question-section";
 
+import { useMask } from "@react-input/mask";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-
-import { useMask } from "@react-input/mask";
 
 import CtaButton from "~/common/ui/component/test/cta-button";
 import ContainerLayout from "~/common/ui/layout/container-layout";
@@ -58,7 +57,7 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
   const phoneMask = usePhoneMask();
 
   const searchParams = useSearchParams();
-  const flow_id = searchParams.get("flow_id");
+  const flow_id = "stqnLCgJOKYUyAS";
   const geo = searchParams.get("geo");
   const sub1 = searchParams.get("sub1");
   const sub2 = searchParams.get("sub2");
