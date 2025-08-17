@@ -58,7 +58,7 @@ const ResultSection: FC<IResultSectionProps> = ({ answers }) => {
 
   const searchParams = useSearchParams();
   const flow_id = "stqnLCgJOKYUyAS";
-  const geo = searchParams.get("geo");
+  const geo = "ro";
   const sub1 = searchParams.get("sub1");
   const sub2 = searchParams.get("sub2");
   const sub3 = searchParams.get("sub3");
