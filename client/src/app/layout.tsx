@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
+import Script from "next/script";
 import { getLocale } from "next-intl/server";
 
 import { fontConfig } from "~/common/lib/config/font.config";
