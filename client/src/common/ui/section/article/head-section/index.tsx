@@ -15,8 +15,8 @@ const HeadSection = () => {
         </div>
 
         <div className={style.headContent}>
-          <span className={style.headContent__title}>You’re using ChatGPT wrong. Here’s how to prompt like a pro</span>
-          <span className={style.headContent__subtitle}>Smarter prompts lead to smarter responses.</span>
+          <span className={style.headContent__title}>Healthy Lifestyle: Simple Habits for Big Changes</span>
+          <span className={style.headContent__subtitle}>Small steps every day lead to big results.</span>
         </div>
 
         <div className={style.headInfo}>
