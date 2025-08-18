@@ -4,6 +4,7 @@ import type { PropsWithChildren } from "react";
 import Script from "next/script";
 import { getLocale } from "next-intl/server";
 
+import { PostHogProvider } from "~/app/provider";
 import { fontConfig } from "~/common/lib/config/font.config";
 
 import "~/common/ui/style/global.scss";
@@ -68,7 +69,9 @@ const RootLayout = async ({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
 
-        {children}
+        <PostHogProvider>
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );
