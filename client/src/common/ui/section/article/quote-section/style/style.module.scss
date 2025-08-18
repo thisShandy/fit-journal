@@ -1,6 +1,12 @@
 @use "src/common/ui/style/main" as *;
 
+.quoteWrapper {
+  width: 100%;
+}
+
 .quoteSection {
+  width: 100%;
+
   &__wrapper {
     @include flexRow();
 

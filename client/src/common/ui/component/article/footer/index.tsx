@@ -11,7 +11,7 @@ interface IFooterProps {
 const Footer: FC<IFooterProps> = ({ text }) => {
   return (
     <ContainerLayout className={style.footer}>
-      <span className={style.footer__title}>{text || "Продукт не является медицинским изделием"}</span>
+      <span className={style.footer__title}>{text || "Produsul nu este un dispozitiv medical"}</span>
     </ContainerLayout>
   );
 };

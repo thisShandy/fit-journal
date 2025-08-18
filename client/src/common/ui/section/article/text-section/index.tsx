@@ -10,7 +10,7 @@ interface ITextSectionProps {
 
 const TextSection: FC<ITextSectionProps> = ({ text }) => {
   return (
-    <section>
+    <section className={style.textWrapper}>
       <ContainerLayout className={style.textSection}>
         <span className={style.textSection__content}>{text}</span>
       </ContainerLayout>

@@ -10,13 +10,13 @@ const HeadSection = () => {
     <section>
       <ContainerLayout className={style.headSection}>
         <div className={style.headTags}>
-          <Tag icon="award" title="#1 of this week" />
-          <Tag icon="star" title="New" />
+          <Tag icon="award" title="Nr. 1 al acestei săptămâni" />
+          <Tag icon="star" title="Nou" />
         </div>
 
         <div className={style.headContent}>
-          <span className={style.headContent__title}>Healthy Lifestyle: Simple Habits for Big Changes</span>
-          <span className={style.headContent__subtitle}>Small steps every day lead to big results.</span>
+          <span className={style.headContent__title}>Stil de viață sănătos: Obiceiuri simple pentru schimbări mari</span>
+          <span className={style.headContent__subtitle}>Pașii mici făcuți zilnic duc la rezultate mari.</span>
         </div>
 
         <div className={style.headInfo}>
@@ -28,9 +28,9 @@ const HeadSection = () => {
               alt="avatar"
               className={style.headInfo__profileAvatar}
             />
-            <span className={style.headInfo__profileName}>James Ostin</span>
+            <span className={style.headInfo__profileName}>Andrei Popescu</span>
           </div>
-          <span className={style.headInfo__info}>12 min read · June 15, 2025</span>
+          <span className={style.headInfo__info}>Lectură de 12 minute · 17 august 2025</span>
         </div>
       </ContainerLayout>
     </section>

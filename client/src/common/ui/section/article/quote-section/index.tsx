@@ -10,7 +10,7 @@ interface IQuoteSectionProps {
 
 const QuoteSection: FC<IQuoteSectionProps> = ({ text }) => {
   return (
-    <section>
+    <section className={style.quoteWrapper}>
       <ContainerLayout className={style.quoteSection}>
         <div className={style.quoteSection__wrapper}>
           <span className={style.quoteSection__text}>{text}</span>

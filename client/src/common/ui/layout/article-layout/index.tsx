@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from "react";
 
 import Footer from "~/common/ui/component/article/footer";
-import Header from "~/common/ui/component/header";
+// import Header from "~/common/ui/component/header";
 
 import style from "./style/style.module.scss";
 
@@ -14,7 +14,7 @@ const ArticleLayout: FC<PropsWithChildren<IArticleLayoutProps>> = ({
 }) => {
   return (
     <div className={style.articleLayout}>
-      <Header />
+      {/*<Header />*/}
       {children}
       <Footer text={footerText} />
     </div>

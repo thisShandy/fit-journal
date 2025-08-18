@@ -1,6 +1,11 @@
 @use "src/common/ui/style/main" as *;
 
+.textWrapper {
+  width: 100%;
+}
+
 .textSection {
+  width: 100%;
 
   &__content {
     text-align: left;

@@ -5,7 +5,7 @@
 }
 
 .imageSection {
-  @include flexColumn(center, flex-start, .25);
+  @include flexColumn(center, flex-start, .5);
 
   width: 100%;
 
