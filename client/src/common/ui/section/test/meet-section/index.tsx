@@ -26,6 +26,7 @@ const MeetSection: FC<IMeetSectionProps> = ({ handleNext }) => {
           width={1280}
           height={720}
           className={style.meetImage}
+          onClick={handleNext}
         />
         <div className={style.meetContinue}>
           <CtaButton title="Treci testul și primește planul!" onClick={handleNext} />
