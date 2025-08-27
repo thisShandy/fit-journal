@@ -15,8 +15,8 @@ const HeadSection = () => {
         </div>
 
         <div className={style.headContent}>
-          <span className={style.headContent__title}>Ожирение и лишний вес — скрытая причина смертности в Румынии!</span>
-          <span className={style.headContent__subtitle}>«Но до сих пор в аптеках нет препарата, который действительно решает эту проблему...»</span>
+          <span className={style.headContent__title}>Obezitatea și excesul de greutate — cauza ascunsă a mortalității în România!</span>
+          <span className={style.headContent__subtitle}>«Însă până acum în farmacii nu există un medicament care să rezolve cu adevărat această problemă...»</span>
         </div>
 
         {/*<div className={style.headInfo}>*/}
