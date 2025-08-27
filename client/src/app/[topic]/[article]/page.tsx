@@ -13,6 +13,8 @@ import Header from "~/common/ui/component/test/header";
 import Image from "next/image";
 
 import style from "./style/style.module.scss";
+import ReviewsSection from "~/common/ui/section/article/reviews-section";
+import CtaButton from "~/common/ui/component/test/cta-button";
 
 const section1Text = "Ежедневно в Румынии от осложнений, связанных с ожирением и лишним весом, <span style='color: #f83f3f; font-weight: bold'>умирают более 450 человек.</span> Это страшные цифры, о которых предпочитают молчать.";
 const section2Text = "Во время одного из ток-шоу на национальном телевидении произошёл неожиданный инцидент: приглашённые эксперты обсуждали влияние питания на здоровье, когда один из врачей вдруг сказал то, что не входило в сценарий. Его слова ошеломили и зрителей, и участников программы.";
@@ -51,7 +53,24 @@ const image2Mock = {
   text: ""
 };
 
+const image3Mock = {
+  image: "https://beststoryblog.info/ozem-lite-slim/ro/canale/img/img-6.jpg",
+  text: "Sandra после 1го месяца с Ozem Lite"
+};
+
+const image4Mock = {
+  image: "https://beststoryblog.info/ozem-lite-slim/ro/canale/img/img-5.jpg",
+  text: "Maria после 3х месяцев с Ozem Lite"
+};
+
 const Article = () => {
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <ArticleLayout>
       <Header />
@@ -87,6 +106,9 @@ const Article = () => {
       <TextSection text={section10Title} />
       <QuoteSection text={section10Quote} />
 
+      <ImageSection {...image3Mock} />
+      <ImageSection {...image4Mock} />
+
       <TextSection text={section11Title} />
       <TextSection text={section11Text} />
       <ContainerLayout>
@@ -113,25 +135,10 @@ const Article = () => {
         </ul>
       </ContainerLayout>
 
-      {/*<TextSection text={section2Title} />*/}
-      {/*<TextSection text={section2Text} />*/}
-      {/*<QuoteSection text={section2Quote} />*/}
-
-      {/*<TextSection text={section3Title} />*/}
-      {/*<TextSection text={section3Text} />*/}
-      {/*<QuoteSection text={section3Quote} />*/}
-
-      {/*<TextSection text={section4Title} />*/}
-      {/*<TextSection text={section4Text} />*/}
-      {/*<QuoteSection text={section4Quote} />*/}
-
-      {/*<TextSection text={conclusionTitle} />*/}
-      {/*<TextSection text={conclusionText} />*/}
-
       <div></div>
 
       <ContainerLayout>
-        <div className={style.resultOrder}>
+        <div className={style.resultOrder} id="offer">
           <div className={style.resultOrder__info}>
             <span className={style.resultOrder__infoTitle}>🔥 Doar astăzi −50%</span>
             <Image
@@ -153,6 +160,10 @@ const Article = () => {
           <SubmitForm />
         </div>
       </ContainerLayout>
+
+      <ReviewsSection />
+
+      <CtaButton title="Попробуй уже сейчас!" onClick={() => handleScroll("offer")} />
     </ArticleLayout>
   );
 };

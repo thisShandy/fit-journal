@@ -9,7 +9,7 @@ export interface IReviewProps {
   name: string;
   time: string;
   text: string;
-  image?: string;
+  image?: string[];
 }
 
 const Review: FC<IReviewProps> = ({ avatar, name, time, text, image }) => {
@@ -26,18 +26,21 @@ const Review: FC<IReviewProps> = ({ avatar, name, time, text, image }) => {
           />
           <span className={style.reviewHeader__name}>{name}</span>
         </div>
-        <span className={style.reviewHeader__time}>{time} ago</span>
+        {/*<span className={style.reviewHeader__time}>{time} ago</span>*/}
       </div>
       <span className={style.review__text}>{text}</span>
-      {image && (
-        <Image
-          src={image}
-          width={360}
-          height={240}
-          alt="review_attachment_image"
-          className={style.review__image}
-        />
-      )}
+      <div className={style.review__list}>
+        {image && image.map((url, index) => (
+          <Image
+            key={`review_imge_${index}_${url}`}
+            src={url}
+            width={360}
+            height={240}
+            alt="review_attachment_image"
+            className={style.review__image}
+          />
+        ))}
+      </div>
     </div>
   );
 };

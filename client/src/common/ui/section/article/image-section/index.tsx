@@ -12,8 +12,15 @@ interface IImageSectionProps {
 }
 
 const ImageSection: FC<IImageSectionProps> = ({ image, text }) => {
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className={style.imageWrapper}>
+    <section className={style.imageWrapper} onClick={() => handleScroll("offer")}>
       <ContainerLayout className={style.imageSection}>
         <Image
           src={image}
