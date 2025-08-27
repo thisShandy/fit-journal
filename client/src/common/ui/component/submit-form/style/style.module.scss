@@ -28,18 +28,17 @@
     display: block;
 
     width: 100%;
-    height: 52px; 
-
+    height: 52px;
     padding: 0 1rem;
 
-    border: 2px solid var(--secondary-color);
     border-radius: 0.25rem;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 0 0 #a26e47;
 
     font-size: 1.15rem;
     line-height: 1.5rem;
 
-    box-shadow: none;
-    animation: none;
+    animation: pulse ease-in-out 2s infinite backwards;
 
     &::placeholder {
       font-size: 1.15rem;
