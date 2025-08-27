@@ -15,23 +15,23 @@ const HeadSection = () => {
         </div>
 
         <div className={style.headContent}>
-          <span className={style.headContent__title}>Stil de viață sănătos: Obiceiuri simple pentru schimbări mari</span>
-          <span className={style.headContent__subtitle}>Pașii mici făcuți zilnic duc la rezultate mari.</span>
+          <span className={style.headContent__title}>Ожирение и лишний вес — скрытая причина смертности в Румынии!</span>
+          <span className={style.headContent__subtitle}>«Но до сих пор в аптеках нет препарата, который действительно решает эту проблему...»</span>
         </div>
 
-        <div className={style.headInfo}>
-          <div className={style.headInfo__profile}>
-            <Image
-              src="https://img.freepik.com/free-photo/handsome-man-smiling-happy-face-portrait-close-up_53876-139608.jpg"
-              width={32}
-              height={32}
-              alt="avatar"
-              className={style.headInfo__profileAvatar}
-            />
-            <span className={style.headInfo__profileName}>Andrei Popescu</span>
-          </div>
-          <span className={style.headInfo__info}>Lectură de 12 minute · 17 august 2025</span>
-        </div>
+        {/*<div className={style.headInfo}>*/}
+        {/*  <div className={style.headInfo__profile}>*/}
+        {/*    <Image*/}
+        {/*      src="https://img.freepik.com/free-photo/handsome-man-smiling-happy-face-portrait-close-up_53876-139608.jpg"*/}
+        {/*      width={32}*/}
+        {/*      height={32}*/}
+        {/*      alt="avatar"*/}
+        {/*      className={style.headInfo__profileAvatar}*/}
+        {/*    />*/}
+        {/*    <span className={style.headInfo__profileName}>Andrei Popescu</span>*/}
+        {/*  </div>*/}
+        {/*  <span className={style.headInfo__info}>Lectură de 12 minute · 17 august 2025</span>*/}
+        {/*</div>*/}
       </ContainerLayout>
     </section>
   );

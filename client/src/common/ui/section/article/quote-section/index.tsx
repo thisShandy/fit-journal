@@ -13,7 +13,7 @@ const QuoteSection: FC<IQuoteSectionProps> = ({ text }) => {
     <section className={style.quoteWrapper}>
       <ContainerLayout className={style.quoteSection}>
         <div className={style.quoteSection__wrapper}>
-          <span className={style.quoteSection__text}>{text}</span>
+          <span className={style.quoteSection__text} dangerouslySetInnerHTML={{ __html: text }} />
         </div>
       </ContainerLayout>
     </section>

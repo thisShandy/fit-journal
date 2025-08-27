@@ -1,0 +1,90 @@
+@use "src/common/ui/style/main" as *;
+
+.resultOrder {
+  @include flexColumn(center, center, 1.25);
+
+  form {
+    @include flexColumn(center, center, 1.25);
+
+    width: 100%;
+  }
+
+  &__info {
+    @include flexColumn(center, center, 1.5);
+
+    padding: 1.5rem;
+
+    background-color: var(--secondary-color-light);
+    border: 2px solid var(--secondary-color);
+
+    @include md {
+      padding: 1rem;
+    }
+  }
+
+  &__infoTitle {
+    font-weight: 700;
+    font-size: 1.75rem;
+    text-align: center;
+
+    @include md {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__infoImage {
+    width: 100%;
+    max-width: 256px;
+    height: auto;
+
+    object-fit: contain;
+
+    @include md {
+      max-height: 208px;
+    }
+  }
+
+  &__infoFooter {
+    @include flexRow(center, space-between, .25);
+    width: 100%;
+  }
+
+  &__infoSubtitle {
+    max-width: 175px;
+
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    @include md {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__infoPrice {
+    @include flexColumn(flex-end, space-between, .25);
+  }
+
+  &__infoPriceOld {
+    font-size: 1rem;
+    color: var(--dark-medium-color);
+    text-decoration: line-through;
+
+    @include md {
+      font-size: .875rem;
+    }
+  }
+
+  &__infoPriceNew {
+    padding: .25rem .5rem;
+
+    background: #6CC578;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white-color);
+
+    @include md {
+      font-size: 1.25rem;
+    }
+  }
+}

@@ -12,7 +12,7 @@ const TextSection: FC<ITextSectionProps> = ({ text }) => {
   return (
     <section className={style.textWrapper}>
       <ContainerLayout className={style.textSection}>
-        <span className={style.textSection__content}>{text}</span>
+        <span className={style.textSection__content} dangerouslySetInnerHTML={{ __html: text }} />
       </ContainerLayout>
     </section>
   );

@@ -1,0 +1,72 @@
+@use "src/common/ui/style/main" as *;
+
+.formWrapper {
+  @include flexColumn(flex-start, flex-start, 1.5);
+
+  width: 100%;
+}
+
+.form {
+  @include flexColumn(center, center, .75);
+
+  width: 100%;
+
+  &__group {
+    @include flexColumn(flex-start, center, .25);
+
+    width: 100%;
+  }
+
+  &__label {
+    font-size: .875rem;
+    color: var(--dark-medium-color);
+
+    @include md {
+      font-size: 1rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 1rem;
+
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 0 0 #a26e47;
+
+    font-size: 1.15rem;
+
+    animation: pulse ease-in-out 1.75s infinite backwards;
+
+    &::placeholder {
+      font-size: 1.15rem;
+      color: var(--dark-medium-color);
+    }
+  }
+}
+
+.footer {
+  @include flexColumn(center, center, .5);
+
+  width: 100%;
+
+  &__cta {
+    box-shadow: 0 0 0 0 #a26e47;
+
+    animation: pulse ease-in-out 2s infinite backwards;
+  }
+
+  &__subtitle {
+    font-size: .875rem;
+    color: var(--dark-medium-color);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #c4885f;
+  }
+
+  100% {
+    box-shadow: 0 0 1rem .5rem rgba(196, 136, 95, 0);
+  }
+}

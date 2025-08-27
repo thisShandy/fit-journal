@@ -237,49 +237,4 @@
       font-size: 1.25rem;
     }
   }
-
-  &__form {
-    @include flexColumn(center, center, .75);
-
-    width: 100%;
-  }
-
-  &__formGroup {
-    @include flexColumn(flex-start, center, .25);
-
-    width: 100%;
-  }
-
-  &__formLabel {
-    font-size: .875rem;
-    color: var(--dark-medium-color);
-
-    @include md {
-      font-size: 1rem;
-    }
-  }
-
-  &__formInput {
-    width: 100%;
-    padding: 1rem;
-
-    border: 2px solid var(--secondary-color);
-
-    font-size: 1.15rem;
-
-    &::placeholder {
-      font-size: 1.15rem;
-      color: var(--dark-medium-color);
-    }
-  }
-
-  &__footer {
-    @include flexColumn(center, center, .5);
-    width: 100%;
-  }
-
-  &__footerSubtitle {
-    font-size: .875rem;
-    color: var(--dark-medium-color);
-  }
 }

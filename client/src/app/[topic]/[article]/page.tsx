@@ -3,75 +3,156 @@
 "use client";
 
 import ArticleLayout from "~/common/ui/layout/article-layout";
-import CtaButton from "~/common/ui/component/test/cta-button";
 import HeadSection from "~/common/ui/section/article/head-section";
 import ImageSection from "~/common/ui/section/article/image-section";
 import QuoteSection from "~/common/ui/section/article/quote-section";
 import TextSection from "~/common/ui/section/article/text-section";
+import SubmitForm from "~/common/ui/component/submit-form";
+import ContainerLayout from "~/common/ui/layout/container-layout";
+import Header from "~/common/ui/component/test/header";
+import Image from "next/image";
 
-const section1Title = (<h3>1. Nutriția ca Fundament</h3>);
-const section1Text = "O nutriție adecvată ajută la menținerea energiei și la întărirea sistemului imunitar. Nu este vorba doar despre ceea ce mâncăm, ci și despre modul în care mâncăm.";
-const section1Quote = `„Hrana să-ți fie medicament și medicamentul hrană.” — Hipocrate`;
+import style from "./style/style.module.scss";
 
-const section2Title = (<h3>2. Mișcarea este Viață</h3>);
-const section2Text = "Chiar și 20–30 de minute de mers activ pe zi pot îmbunătăți dispoziția și reduce stresul. Cel mai important este ca mișcarea să aducă bucurie.";
-const section2Quote = `„Când corpul se mișcă, mintea se odihnește.” — Înțelepciune orientală`;
+const section1Text = "Ежедневно в Румынии от осложнений, связанных с ожирением и лишним весом, <span style='color: #f83f3f; font-weight: bold'>умирают более 450 человек.</span> Это страшные цифры, о которых предпочитают молчать.";
+const section2Text = "Во время одного из ток-шоу на национальном телевидении произошёл неожиданный инцидент: приглашённые эксперты обсуждали влияние питания на здоровье, когда один из врачей вдруг сказал то, что не входило в сценарий. Его слова ошеломили и зрителей, и участников программы.";
+const section3Text = "Доктор Кэлэру прямо заявил:";
+const section3Quote = "«Мы закрываем глаза на проблему, которая каждый день уносит жизни сотен румын! Почему никто не говорит об ожирении? <span style='color: #f83f3f; font-weight: bold'>Почему молчат о том, что уже существует средство, которое может помочь полностью избавиться от лишнего веса?</span>»";
+const section4Text = "В студии начался переполох. Ведущие пытались прервать врача, но он продолжал:";
+const section4Quote = "«Ожирение — это одна из главных причин смертности в Румынии. Ежегодно из-за осложнений, вызванных лишним весом, <span style='color: #f83f3f; font-weight: bold'>умирает более 160 тысяч человек!</span> И это при том, что решение уже найдено!»";
 
-const section3Title = (<h3>3. Somnul și Recuperarea</h3>);
-const section3Text = "Somnul nu este o pierdere de timp, ci o investiție în sănătate. Un program regulat de somn ajută creierul și corpul să se refacă.";
-const section3Quote = `„Somnul este acel lanț de aur care leagă sănătatea și trupul nostru.” — Thomas Dekker`;
+const section1Title = "<h3 style='color: #f83f3f;'>Ожирение — одна из основных причин смертности людей. Не только в Румынии, но и во всем мире!</h3>";
 
-const section4Title = (<h3>4. Echilibrul Emoțional</h3>);
-const section4Text = "Sănătatea nu ține doar de corp, ci și de minte. Meditația, cititul sau o simplă conversație cu cei dragi pot ajuta la reducerea stresului.";
-const section4Quote = `„Sănătatea este armonia dintre trup, minte și suflet.” — Platon`;
+const section5Title = "<h3>Наше расследование</h3>";
+const section5Text = "Мы связались с доктором Кэлэру, чтобы узнать, о каком методе идёт речь.";
 
-const conclusionTitle = (<h4>Concluzie</h4>);
-const conclusionText = "Un stil de viață sănătos nu începe cu o revoluție, ci cu pași mici: mai multă apă, o plimbare în aer liber, somn de calitate. Aceste obiceiuri simple creează o bază solidă pentru o viață lungă și activă.";
+const section6Quote = "<span style='font-weight: bold;'>Репортёр:</span> Доктор, неужели всё так серьёзно?";
+const section7Quote = "<span style='font-weight: bold;'>Доктор Кэлэру:</span> Ещё как. Но самое страшное — молчание. На фармацевтическом рынке слишком много интересов. Лекарства от лишнего веса, которые сегодня рекламируют, — это лишь способ выкачивания денег из карманов людей.";
+const section8Quote = "<span style='font-weight: bold;'>Репортёр:</span> Но существует ли реальное решение?";
+const section9Quote = "<span style='font-weight: bold;'>Доктор Кэлэру:</span> Да. Его создала команда молодых исследователей из Бухареста. Они разработали препарат <span style='color: #f83f3f; font-weight: bold'>Ozem Lite Slim, он даёт РЕАЛЬНОЕ снижение веса от 3 кг в неделю</span> без диет, спорта и химических стимуляторов!";
+
+const section10Title = "<h3>Доктор Кэлэру:</h3>";
+const section10Quote = "«Slimetrix Forte запускает естественный процесс жиросжигания. Организм начинает работать сам на себя, без изнуряющих диет и тренировок. Поэтому тысячи румын уже смогли похудеть без риска для здоровья»";
+
+const section11Title = "<h3>Результаты тестирования</h3>";
+const section11Text = "В независимом исследовании участвовали 120 человек с ожирением 1–2 степени. За месяц:";
+const section11Results = [
+  "97% участников потеряли от 10 кг",
+  "89% отметили улучшение самочувствия"
+];
 
 const imageMock = {
-  image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  text: "Bol proaspăt și colorat, plin de vitamine"
+  image: "https://beststoryblog.info/ozem-lite-slim/ro/canale/img/img-1.jpg",
+  text: ""
+};
+
+const image2Mock = {
+  image: "https://beststoryblog.info/ozem-lite-slim/ro/canale/img/img-2.jpg",
+  text: ""
 };
 
 const Article = () => {
   return (
     <ArticleLayout>
-      <div
-        style={{
-          width: "100%",
-          height: "12px",
-        }}
-      />
+      <Header />
 
       <HeadSection />
 
-      <TextSection text={section1Title} />
       <TextSection text={section1Text} />
-      <QuoteSection text={section1Quote} />
+      <TextSection text={section2Text} />
 
       <ImageSection {...imageMock} />
 
-      <TextSection text={section2Title} />
-      <TextSection text={section2Text} />
-      <QuoteSection text={section2Quote} />
-
-      <TextSection text={section3Title} />
       <TextSection text={section3Text} />
       <QuoteSection text={section3Quote} />
 
-      <TextSection text={section4Title} />
       <TextSection text={section4Text} />
       <QuoteSection text={section4Quote} />
 
-      <TextSection text={conclusionTitle} />
-      <TextSection text={conclusionText} />
+      <TextSection text={section1Title} />
 
-      <CtaButton
-        title="Află mai mult"
-        onClick={() => {
-          window.location.href = "https://greattop-goods.press/ozem-lite-slim/ro/v1/?geo=29625&flow_id={flow_id}&click_id={click_id}&sub1={sub1}&sub2={sub2}&sub3={sub3}&sub4={sub4}&sub5={sub5}&facebook={facebook}&pl={prelanding_id}&lp={landing_id}";
-        }}
-      />
+      <ImageSection {...image2Mock} />
+
+      <TextSection text={section5Title} />
+      <TextSection text={section5Text} />
+
+      <QuoteSection text={section6Quote} />
+      <QuoteSection text={section7Quote} />
+
+      <QuoteSection text={section8Quote} />
+      <QuoteSection text={section9Quote} />
+
+      <div style={{ width: "100%" }} />
+
+      <TextSection text={section10Title} />
+      <QuoteSection text={section10Quote} />
+
+      <TextSection text={section11Title} />
+      <TextSection text={section11Text} />
+      <ContainerLayout>
+        <ul
+          style={{
+            display: "flex",
+            alignItems: "flex-start",
+            flexDirection: "column",
+
+            width: "100%",
+            paddingLeft: 24,
+          }}
+        >
+          {section11Results.map((item, i) => (
+            <li
+              key={`index_${i}`}
+              style={{
+                fontSize: "1.1rem",
+              }}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </ContainerLayout>
+
+      {/*<TextSection text={section2Title} />*/}
+      {/*<TextSection text={section2Text} />*/}
+      {/*<QuoteSection text={section2Quote} />*/}
+
+      {/*<TextSection text={section3Title} />*/}
+      {/*<TextSection text={section3Text} />*/}
+      {/*<QuoteSection text={section3Quote} />*/}
+
+      {/*<TextSection text={section4Title} />*/}
+      {/*<TextSection text={section4Text} />*/}
+      {/*<QuoteSection text={section4Quote} />*/}
+
+      {/*<TextSection text={conclusionTitle} />*/}
+      {/*<TextSection text={conclusionText} />*/}
+
+      <div></div>
+
+      <ContainerLayout>
+        <div className={style.resultOrder}>
+          <div className={style.resultOrder__info}>
+            <span className={style.resultOrder__infoTitle}>🔥 Doar astăzi −50%</span>
+            <Image
+              src="/assets/image/test/order-image.png"
+              alt="ozem"
+              width={256}
+              height={256}
+              className={style.resultOrder__infoImage}
+            />
+            <div className={style.resultOrder__infoFooter}>
+              <span className={style.resultOrder__infoSubtitle}>Ofertă<br />specială!</span>
+              <div className={style.resultOrder__infoPrice}>
+                <span className={style.resultOrder__infoPriceOld}>198 RON</span>
+                <span className={style.resultOrder__infoPriceNew}>99 RON</span>
+              </div>
+            </div>
+          </div>
+
+          <SubmitForm />
+        </div>
+      </ContainerLayout>
     </ArticleLayout>
   );
 };
